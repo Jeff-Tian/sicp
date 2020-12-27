@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [1. Building Abstractions with Procedures](README.md)
 

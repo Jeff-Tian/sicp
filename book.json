@@ -2,6 +2,17 @@
     "plugins": [
         "klipse",
         "katex",
-        "terminull"
-    ]
+        "terminull",
+        "github",
+        "edit-link"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/jeff-tian/sicp"
+        },
+        "edit-link": {
+            "base": "https://github.com/jeff-tian/sicp/edit/master",
+            "label": "Edit Page"
+        }
+    }
 }

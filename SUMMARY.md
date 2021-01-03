@@ -7,3 +7,4 @@
     * [1.4](chapter1/1.4.md)
     * [1.5](chapter1/1.5.md)
     * [1.6](chapter1/1.6.md)
+    * [1.7](chapter1/1.7.md)

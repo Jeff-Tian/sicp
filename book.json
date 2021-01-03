@@ -1,6 +1,7 @@
 {
     "plugins": [
         "klipse",
-        "katex"
+        "katex",
+        "terminull"
     ]
 }

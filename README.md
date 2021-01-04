@@ -15,4 +15,4 @@ What I cannot create, I don't understand.
 
 You can add my wechat and I'll let you in.
 
-![wechat qr code](.gitbook/assets/wechat.jpeg)
+![wechat qr code](wechat.jpeg)

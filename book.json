@@ -1,11 +1,13 @@
 {
   "plugins": [
     "klipse",
-    "katex",
     "terminull",
     "github",
     "edit-link",
-    "eason-parser"
+    "eason-parser",
+    "katex",
+    "-theme-default",
+    "theme-jeff-tian@1.0.9"
   ],
   "pluginsConfig": {
     "github": {
@@ -15,5 +17,7 @@
       "base": "https://github.com/jeff-tian/sicp/edit/master",
       "label": "Edit Page"
     }
-  }
+  },
+  "sortedBy": ".",
+  "title": "SICP"
 }

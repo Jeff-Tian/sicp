@@ -4,18 +4,17 @@
   "description": "#### Exercise 1.1: Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.",
   "main": "index.js",
   "dependencies": {
-    "@jeff-tian/gitbook-plugin-katex": "*",
+    "@jeff-tian/gitbook-plugin-katex": "1.1.8",
     "gitbook-plugin-eason-parser": "0.0.7",
     "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-github": "^2.0.0",
-    "gitbook-plugin-katex": "^1.1.4",
     "gitbook-plugin-klipse": "^1.2.0",
     "gitbook-plugin-terminull": "1.0.5",
     "gitbook-plugin-theme-jeff-tian": "^1.0.9"
   },
   "devDependencies": {
     "@jeff-tian/gitbook-summary": "1.2.6",
-    "@jeff-tian/gitbook-cli": "*"
+    "@jeff-tian/gitbook-cli": "2.3.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

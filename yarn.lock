@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@jeff-tian/gitbook-cli@*":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@jeff-tian/gitbook-cli/-/gitbook-cli-2.3.2.tgz#58f26b9f98f5b174752949863a8e2dbed2ced5c8"
-  integrity sha512-kl1Ss/RlR+MEUaYiD9qcVMTYlEk1k0yIOTiHDiDC5G2ij3xjCUU03kTRTzcwmm5djCcWe5YIENvqksuDv1ol6Q==
+"@jeff-tian/gitbook-cli@2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@jeff-tian/gitbook-cli/-/gitbook-cli-2.3.8.tgz#1b3e292513cb8d82db4fe88b4da2f49449642019"
+  integrity sha512-w412Egi2zRncJooPOQIZlfx9BD77slSjgOm9v7Qv2rVh1dVDNvMgNc3j1HwILqso0OVOijvgD/JM4N7/7zC9mA==
   dependencies:
     bash-color "0.0.4"
     commander "2.11.0"
@@ -19,12 +19,12 @@
     tmp "0.0.31"
     user-home "2.0.0"
 
-"@jeff-tian/gitbook-plugin-katex@*":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@jeff-tian/gitbook-plugin-katex/-/gitbook-plugin-katex-1.1.5.tgz#80022357b44e094863d0d5c65674818b6e076c48"
-  integrity sha512-eq67K4OIRqOlCYRoHnaESiIw4a52XLW7S2i1GQYUZ5DfUhQPpxp6AHVRtIjnyBh0/cXxKdFAvoY+7KCkj7dnfA==
+"@jeff-tian/gitbook-plugin-katex@1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@jeff-tian/gitbook-plugin-katex/-/gitbook-plugin-katex-1.1.8.tgz#f2208472420c948f3f9dd62ce5a56fb40688c594"
+  integrity sha512-gM4AxFc/KXlciCR1EU6ugKzPNyCedfklofniN8B3BKR4lN6jL3Vs3ggNAsh8lFkarHZQfis3cKphHXrRdwP3nQ==
   dependencies:
-    katex "0.12.0"
+    katex "0.7.1"
 
 "@jeff-tian/gitbook-summary@1.2.6":
   version "1.2.6"
@@ -605,7 +605,7 @@ commander@2.11.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
   integrity sha512-b0553uYA5YAEGgyYIGYROzKQ7X5RAqedkfjiZxwi0kL1g3bOaBNNZfYkzt/CL0umgD5wc9Jec2FbB98CjkMRvQ==
 
-commander@^2.19.0, commander@^2.9.0:
+commander@^2.9.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -911,9 +911,9 @@ entities@^1.1.1, entities@~1.1.1:
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
 entities@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/entities/-/entities-2.1.0.tgz#992d3129cf7df6870b96c57858c249a120f8b8b5"
-  integrity sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
+  integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
 err-code@^1.0.0:
   version "1.1.2"
@@ -1260,13 +1260,6 @@ gitbook-plugin-github@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-github/-/gitbook-plugin-github-2.0.0.tgz#5166e763cfcc402d432880b7a6c85c1c54b56a8d"
   integrity sha1-UWbnY8/MQC1DKIC3pshcHFS1ao0=
-
-gitbook-plugin-katex@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/gitbook-plugin-katex/-/gitbook-plugin-katex-1.1.4.tgz#9d323efadd26c3408526c5c227ebdb4c1120d9ac"
-  integrity sha512-eBDcI3Cq2ZJFTbqYu313pg+Xkmf7q8bQLKNJMj0ADFYJKGOFSKf5MvY3TscKDYp57eq/BcUfnH43VX9mdsqo8g==
-  dependencies:
-    katex "0.7.1"
 
 gitbook-plugin-klipse@^1.2.0:
   version "1.2.0"
@@ -1828,13 +1821,6 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
-
-katex@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/katex/-/katex-0.12.0.tgz#2fb1c665dbd2b043edcf8a1f5c555f46beaa0cb9"
-  integrity sha512-y+8btoc/CK70XqcHqjxiGWBOeIL8upbS0peTPXTvgrh21n1RiWWcIpSWM+4uXq+IAgNh9YYQWdc7LVDPDAEEAg==
-  dependencies:
-    commander "^2.19.0"
 
 katex@0.7.1:
   version "0.7.1"

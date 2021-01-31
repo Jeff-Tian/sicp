@@ -18,3 +18,5 @@
   * [15](1.-building-abstractions-with-procedures/1.15.md)
   * [16](1.-building-abstractions-with-procedures/1.16.md)
   * [17](1.-building-abstractions-with-procedures/1.17.md)
+  * [18](1.-building-abstractions-with-procedures/1.18.md)
+  * [19](1.-building-abstractions-with-procedures/1.19.md)

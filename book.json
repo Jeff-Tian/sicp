@@ -1,18 +1,23 @@
 {
-    "plugins": [
-        "klipse",
-        "katex",
-        "terminull",
-        "github",
-        "edit-link"
-    ],
-    "pluginsConfig": {
-        "github": {
-            "url": "https://github.com/jeff-tian/sicp"
-        },
-        "edit-link": {
-            "base": "https://github.com/jeff-tian/sicp/edit/master",
-            "label": "Edit Page"
-        }
+  "plugins": [
+    "klipse",
+    "terminull",
+    "github",
+    "edit-link",
+    "eason-parser",
+    "katex@git+https://github.com/Jeff-Tian/plugin-katex#v1.1.9",
+    "-theme-default",
+    "theme-jeff-tian@1.0.9"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/jeff-tian/sicp"
+    },
+    "edit-link": {
+      "base": "https://github.com/jeff-tian/sicp/edit/master",
+      "label": "Edit Page"
     }
+  },
+  "sortedBy": ".",
+  "title": "SICP"
 }

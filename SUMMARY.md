@@ -30,6 +30,7 @@
     * [42](en_US/1.-building-abstractions-with-procedures/1.42.md)
     * [43](en_US/1.-building-abstractions-with-procedures/1.43.md)
     * [44](en_US/1.-building-abstractions-with-procedures/1.44.md)
+    * [45](en_US/1.-building-abstractions-with-procedures/1.45.md)
 - [CN](zh_CN/README.md)
   - [-构造过程抽象](zh_CN/1.-构造过程抽象/README.md)
     * [1](zh_CN/1.-构造过程抽象/1.1.md)

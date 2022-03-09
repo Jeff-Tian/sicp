@@ -4,7 +4,7 @@
   "description": "#### Exercise 1.1: Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.",
   "main": "index.js",
   "dependencies": {
-    "@jeff-tian/gitbook-plugin-katex": "git+https://github.com/Jeff-Tian/plugin-katex.git#v1.1.9",
+    "@jeff-tian/gitbook-plugin-katex": "git+https://gitee.com/zizhujy/plugin-katex#v1.1.9",
     "gitbook-plugin-eason-parser": "0.0.7",
     "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-github": "^2.0.0",

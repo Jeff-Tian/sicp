@@ -5,7 +5,7 @@
     "github",
     "edit-link",
     "eason-parser",
-    "katex@git+https://gitee.com/zizhujy/plugin-katex#v1.1.9",
+    "katex@git+https://github.com/Jeff-Tian/plugin-katex#v1.1.9",
     "-theme-default",
     "theme-jeff-tian@1.0.9"
   ],

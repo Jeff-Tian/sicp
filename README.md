@@ -25,3 +25,11 @@ You can add my wechat and I'll let you in.
 
 <iframe src="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxNTk3ODgxNA==&action=getalbum&album_id=1679046774696574978&scene=173&from_msgid=2247483677&from_itemidx=1&count=3&nolastread=1#wechat_redirect" style="border: 0; width: 100%; min-height: 500px">点击跳转</a></iframe>
 
+## Run this project locally
+
+```shell
+git submodule update --init --recursive
+yarn && yarn start
+
+open http://localhost:4000
+```

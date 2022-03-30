@@ -1,5 +1,6 @@
 # SICP
 
+- [Js](coding-js/README.md)
 - [US](en_US/README.md)
   - [Building Abstractions With Procedures](en_US/1.-building-abstractions-with-procedures/README.md)
     * [1](en_US/1.-building-abstractions-with-procedures/1.1.md)
@@ -58,4 +59,6 @@
   - -构造数据抽象
     * [1](zh_CN/2.-构造数据抽象/2.1.md)
     * [2](zh_CN/2.-构造数据抽象/2.2.md)
+    * [3](zh_CN/2.-构造数据抽象/2.3.md)
+    * [4](zh_CN/2.-构造数据抽象/2.4.md)
 * [](LANGS.md)

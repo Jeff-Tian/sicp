@@ -33,3 +33,9 @@ yarn && yarn start
 
 open http://localhost:4000
 ```
+
+## Online deploy
+
+This site is deployed by netlify automatically when there is a `git push`:
+
+https://app.netlify.com/sites/sicp/deploys

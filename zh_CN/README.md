@@ -13,13 +13,21 @@
 - [怎么徒手计算正切函数tanx与对数函数的近似值? - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/520617642/answer/2388416491)
 
 ## 一起学习
-### 集成环境
+
+### 线上集成环境
+
 现代化的学习工具有很多，首推 replit。
 
 [现代化的学习方式](https://www.zhihu.com/zvideo/1474464781729529857)
 
 ![](../replit1.png)
 ![](../replit2.png)
+
+### 本地 Scheme 环境
+
+Racket有个语言包就叫sicp ，专门给看这本书用的
+
+https://docs.racket-lang.org/sicp-manual/index.html
 
 
 ### 微信群

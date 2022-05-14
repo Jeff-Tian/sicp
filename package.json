@@ -1,7 +1,7 @@
 {
   "name": "sicp",
   "version": "1.0.0",
-  "description": "#### Exercise 1.1: Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.",
+  "description": "《计算机程序的构造与解释》课后习题集。 The exercise of the text book \"Structure and Interpretation of Computer Programs\"",
   "main": "index.js",
   "dependencies": {
     "@jeff-tian/gitbook-plugin-katex": "git+https://github.com/Jeff-Tian/plugin-katex.git#v1.1.9",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@jeff-tian/gitbook-summary": "1.2.6",
-    "@jeff-tian/gitbook-cli": "2.3.8"
+    "@jeff-tian/gitbook-cli": "1.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

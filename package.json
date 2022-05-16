@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/Jeff-Tian/sicp/issues"
   },
-  "homepage": "https://github.com/Jeff-Tian/sicp#readme"
+  "homepage": "https://github.com/Jeff-Tian/sicp#readme",
+  "engines": {
+    "node": "v10.17.0"
+  }
 }

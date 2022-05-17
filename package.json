@@ -4,11 +4,12 @@
   "description": "《计算机程序的构造与解释》课后习题集。 The exercise of the text book \"Structure and Interpretation of Computer Programs\"",
   "main": "index.js",
   "dependencies": {
-    "gitbook-plugin-katex2": "^1.2.0",
-    "gitbook-plugin-eason-parser": "0.0.7",
+    "@uniheart/experience.ui.uniheart-rich-footer": "^0.0.0-5a015bc9892a2bd97565a9ae31a17b9db056a553",
+    "gitbook-plugin-eason-parser": "^1.8.8",
     "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-katex2": "^1.2.0",
     "gitbook-plugin-klipse": "^1.2.0",
-    "gitbook-plugin-theme-jeff-tian": "^1.0.9"
+    "gitbook-plugin-theme-jeff-tian": "1.2.0"
   },
   "devDependencies": {
     "@jeff-tian/gitbook-summary": "1.2.6",

@@ -1,4 +1,4 @@
-# SICP
+# SICP | 计算机程序的构造和解释
 
 - [Js](coding-js/README.md)
 - [US](en_US/README.md)

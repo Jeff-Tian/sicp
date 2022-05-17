@@ -4,7 +4,7 @@
     "github",
     "eason-parser",
     "-theme-default",
-    "theme-jeff-tian@1.0.9",
+    "theme-jeff-tian@1.2.0",
     "katex2"
   ],
   "pluginsConfig": {
@@ -14,8 +14,11 @@
     "edit-link": {
       "base": "https://github.com/jeff-tian/sicp/edit/master",
       "label": "Edit Page"
+    },
+    "theme-default": {
+      "showLevel": false
     }
   },
   "sortedBy": ".",
-  "title": "SICP"
+  "title": "SICP | 计算机程序的构造和解释"
 }

@@ -4,6 +4,7 @@
   "description": "《计算机程序的构造与解释》课后习题集。 The exercise of the text book \"Structure and Interpretation of Computer Programs\"",
   "main": "index.js",
   "dependencies": {
+    "gitbook-plugin-katex2": "^1.2.0",
     "gitbook-plugin-eason-parser": "0.0.7",
     "gitbook-plugin-github": "^2.0.0",
     "gitbook-plugin-klipse": "^1.2.0",
@@ -15,7 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gitbook install && npm install && book sm && gitbook build",
+    "build": "gitbook install && yarn install && book sm && gitbook build",
+    "build-only": "gitbook build",
     "start": "npm run build && gitbook serve",
     "restart": "gitbook serve"
   },
@@ -30,6 +32,6 @@
   },
   "homepage": "https://github.com/Jeff-Tian/sicp#readme",
   "engines": {
-    "node": "v10.17.0"
+    "node": "v12.10.0"
   }
 }

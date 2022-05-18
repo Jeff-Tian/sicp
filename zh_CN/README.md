@@ -7,10 +7,14 @@
 凡是我不能拿来创建的，都是我还没有理解的。
 
 ## 学以致用
+
 学习了 SICP，现炒现卖，已经能回答一些知乎上的问题了：
+
+- [对你影响最深的编程书籍是哪一本？ - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/19751730/answer/2448418886)
 - [怎么理解邱奇计数？ - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/39930042/answer/2415190431)
 - [《计算机程序的构造与解释》、scheme lisp 怎么编出一个可执行的hello world 程序？ - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/19717660/answer/2416275760)
 - [怎么徒手计算正切函数tanx与对数函数的近似值? - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/520617642/answer/2388416491)
+- [有哪些高中生好写的IT程序? - Jeff Tian的回答 - 知乎](https://www.zhihu.com/question/533392835/answer/2491016253)
 
 ## 一起学习
 

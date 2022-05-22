@@ -1282,10 +1282,10 @@ gitbook-plugin-klipse@^1.2.0:
   resolved "https://registry.npmjs.org/gitbook-plugin-klipse/-/gitbook-plugin-klipse-1.2.0.tgz#0ac712805977180a21c021549369c072b941779f"
   integrity sha1-CscSgFl3GAohwCFUk2nAcrlBd58=
 
-gitbook-plugin-theme-jeff-tian@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/gitbook-plugin-theme-jeff-tian/-/gitbook-plugin-theme-jeff-tian-1.2.0.tgz#e63522de122ba5381af41e149de920cded8b9c38"
-  integrity sha512-q3nS811fGm14eaV8mR74T+McYK4ct/9N0G6vt1kkkGOgiQvR2+C33+1y2WJDreMkW51VY2vTC0ZIyglZtAR9Lw==
+gitbook-plugin-theme-jeff-tian@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gitbook-plugin-theme-jeff-tian/-/gitbook-plugin-theme-jeff-tian-1.2.1.tgz#839536f74556ba592bfc10df35d86b4be88b7b35"
+  integrity sha512-a4d3kRXIDrJI8DWsZfirB6pcJmpctYbfVkK0fQhjhmYA3i3VTmJFaEzJ6JoEwVr1aCpQTkRc/xXrbQFpCKWUNg==
   dependencies:
     "@uniheart/experience.ui.uniheart-rich-footer" "^0.0.0-5a015bc9892a2bd97565a9ae31a17b9db056a553"
     react "^18.1.0"

@@ -9,7 +9,7 @@
     "gitbook-plugin-github": "^2.0.0",
     "gitbook-plugin-katex2": "^1.2.0",
     "gitbook-plugin-klipse": "^1.2.0",
-    "gitbook-plugin-theme-jeff-tian": "1.2.0"
+    "gitbook-plugin-theme-jeff-tian": "1.2.1"
   },
   "devDependencies": {
     "@jeff-tian/gitbook-summary": "1.2.6",

@@ -4,7 +4,7 @@
     "github",
     "eason-parser",
     "-theme-default",
-    "theme-jeff-tian@1.2.2",
+    "theme-jeff-tian",
     "katex2"
   ],
   "pluginsConfig": {

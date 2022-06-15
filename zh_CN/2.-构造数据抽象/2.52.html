@@ -1,0 +1,1816 @@
+
+<!DOCTYPE HTML>
+<html lang="zh_CN" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.52 · SICP | 计算机程序的构造和解释</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    <link rel="stylesheet" href="../../gitbook/uniheart-rich-footer.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex2/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.53.html" />
+    
+    
+    <link rel="prev" href="2.51.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1.-构造过程抽象/">
+            
+                <a href="../1.-构造过程抽象/">
+            
+                    
+                    构造过程抽象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.-构造过程抽象/1.1.html">
+            
+                <a href="../1.-构造过程抽象/1.1.html">
+            
+                    
+                    1.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.-构造过程抽象/1.2.html">
+            
+                <a href="../1.-构造过程抽象/1.2.html">
+            
+                    
+                    1.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1.-构造过程抽象/1.2.3.html">
+            
+                <a href="../1.-构造过程抽象/1.2.3.html">
+            
+                    
+                    1.2.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1.-构造过程抽象/1.3.html">
+            
+                <a href="../1.-构造过程抽象/1.3.html">
+            
+                    
+                    1.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1.-构造过程抽象/1.4.html">
+            
+                <a href="../1.-构造过程抽象/1.4.html">
+            
+                    
+                    1.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../1.-构造过程抽象/1.22.html">
+            
+                <a href="../1.-构造过程抽象/1.22.html">
+            
+                    
+                    1.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../1.-构造过程抽象/1.23.html">
+            
+                <a href="../1.-构造过程抽象/1.23.html">
+            
+                    
+                    1.23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../1.-构造过程抽象/1.24.html">
+            
+                <a href="../1.-构造过程抽象/1.24.html">
+            
+                    
+                    1.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../1.-构造过程抽象/1.25.html">
+            
+                <a href="../1.-构造过程抽象/1.25.html">
+            
+                    
+                    1.25
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../1.-构造过程抽象/1.26.html">
+            
+                <a href="../1.-构造过程抽象/1.26.html">
+            
+                    
+                    1.26
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../1.-构造过程抽象/1.27.html">
+            
+                <a href="../1.-构造过程抽象/1.27.html">
+            
+                    
+                    1.27
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../1.-构造过程抽象/1.28.html">
+            
+                <a href="../1.-构造过程抽象/1.28.html">
+            
+                    
+                    1.28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../1.-构造过程抽象/1.29.html">
+            
+                <a href="../1.-构造过程抽象/1.29.html">
+            
+                    
+                    1.29
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../1.-构造过程抽象/1.30.html">
+            
+                <a href="../1.-构造过程抽象/1.30.html">
+            
+                    
+                    1.30
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../1.-构造过程抽象/1.31.html">
+            
+                <a href="../1.-构造过程抽象/1.31.html">
+            
+                    
+                    1.31
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../1.-构造过程抽象/1.32.html">
+            
+                <a href="../1.-构造过程抽象/1.32.html">
+            
+                    
+                    1.32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../1.-构造过程抽象/1.33.html">
+            
+                <a href="../1.-构造过程抽象/1.33.html">
+            
+                    
+                    1.33
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../1.-构造过程抽象/1.34.html">
+            
+                <a href="../1.-构造过程抽象/1.34.html">
+            
+                    
+                    1.34
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../1.-构造过程抽象/1.35.html">
+            
+                <a href="../1.-构造过程抽象/1.35.html">
+            
+                    
+                    1.35
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../1.-构造过程抽象/1.36.html">
+            
+                <a href="../1.-构造过程抽象/1.36.html">
+            
+                    
+                    1.36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../1.-构造过程抽象/1.37.html">
+            
+                <a href="../1.-构造过程抽象/1.37.html">
+            
+                    
+                    1.37
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../1.-构造过程抽象/1.38.html">
+            
+                <a href="../1.-构造过程抽象/1.38.html">
+            
+                    
+                    1.38
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="README.md">
+            
+                <span>
+            
+                    
+                    构造数据抽象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2.1.html">
+            
+                <a href="2.1.html">
+            
+                    
+                    2.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2.2.html">
+            
+                <a href="2.2.html">
+            
+                    
+                    2.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2.3.html">
+            
+                <a href="2.3.html">
+            
+                    
+                    2.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2.4.html">
+            
+                <a href="2.4.html">
+            
+                    
+                    2.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2.5.html">
+            
+                <a href="2.5.html">
+            
+                    
+                    2.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="2.6.html">
+            
+                <a href="2.6.html">
+            
+                    
+                    2.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="2.7.html">
+            
+                <a href="2.7.html">
+            
+                    
+                    2.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="2.8.html">
+            
+                <a href="2.8.html">
+            
+                    
+                    2.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="2.9.html">
+            
+                <a href="2.9.html">
+            
+                    
+                    2.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="2.10.html">
+            
+                <a href="2.10.html">
+            
+                    
+                    2.10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="2.11.html">
+            
+                <a href="2.11.html">
+            
+                    
+                    2.11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="2.12.html">
+            
+                <a href="2.12.html">
+            
+                    
+                    2.12
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="2.13.html">
+            
+                <a href="2.13.html">
+            
+                    
+                    2.13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="2.14.html">
+            
+                <a href="2.14.html">
+            
+                    
+                    2.14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="2.15.html">
+            
+                <a href="2.15.html">
+            
+                    
+                    2.15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="2.16.html">
+            
+                <a href="2.16.html">
+            
+                    
+                    2.16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="2.17.html">
+            
+                <a href="2.17.html">
+            
+                    
+                    2.17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="2.18.html">
+            
+                <a href="2.18.html">
+            
+                    
+                    2.18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="2.19.html">
+            
+                <a href="2.19.html">
+            
+                    
+                    2.19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="2.20.html">
+            
+                <a href="2.20.html">
+            
+                    
+                    2.20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="2.21.html">
+            
+                <a href="2.21.html">
+            
+                    
+                    2.21
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="2.22.html">
+            
+                <a href="2.22.html">
+            
+                    
+                    2.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="2.23.html">
+            
+                <a href="2.23.html">
+            
+                    
+                    2.23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="2.24.html">
+            
+                <a href="2.24.html">
+            
+                    
+                    2.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="2.25.html">
+            
+                <a href="2.25.html">
+            
+                    
+                    2.25
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="2.26.html">
+            
+                <a href="2.26.html">
+            
+                    
+                    2.26
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="2.27.html">
+            
+                <a href="2.27.html">
+            
+                    
+                    2.27
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="2.28.html">
+            
+                <a href="2.28.html">
+            
+                    
+                    2.28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="2.29.html">
+            
+                <a href="2.29.html">
+            
+                    
+                    2.29
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="2.30.html">
+            
+                <a href="2.30.html">
+            
+                    
+                    2.30
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="2.31.html">
+            
+                <a href="2.31.html">
+            
+                    
+                    2.31
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="2.32.html">
+            
+                <a href="2.32.html">
+            
+                    
+                    2.32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="2.33.html">
+            
+                <a href="2.33.html">
+            
+                    
+                    2.33
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="2.34.html">
+            
+                <a href="2.34.html">
+            
+                    
+                    2.34
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="2.35.html">
+            
+                <a href="2.35.html">
+            
+                    
+                    2.35
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="2.36.html">
+            
+                <a href="2.36.html">
+            
+                    
+                    2.36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.37" data-path="2.37.html">
+            
+                <a href="2.37.html">
+            
+                    
+                    2.37
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.38" data-path="2.38.html">
+            
+                <a href="2.38.html">
+            
+                    
+                    2.38
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.39" data-path="2.39.html">
+            
+                <a href="2.39.html">
+            
+                    
+                    2.39
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.40" data-path="2.40.html">
+            
+                <a href="2.40.html">
+            
+                    
+                    2.40
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.41" data-path="2.41.html">
+            
+                <a href="2.41.html">
+            
+                    
+                    2.41
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.42" data-path="2.42.html">
+            
+                <a href="2.42.html">
+            
+                    
+                    2.42
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.43" data-path="2.43.html">
+            
+                <a href="2.43.html">
+            
+                    
+                    2.43
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.44" data-path="2.44.html">
+            
+                <a href="2.44.html">
+            
+                    
+                    2.44
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.45" data-path="2.45.html">
+            
+                <a href="2.45.html">
+            
+                    
+                    2.45
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.46" data-path="2.46.html">
+            
+                <a href="2.46.html">
+            
+                    
+                    2.46
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.47" data-path="2.47.html">
+            
+                <a href="2.47.html">
+            
+                    
+                    2.47
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.48" data-path="2.48.html">
+            
+                <a href="2.48.html">
+            
+                    
+                    2.48
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.49" data-path="2.49.html">
+            
+                <a href="2.49.html">
+            
+                    
+                    2.49
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.50" data-path="2.50.html">
+            
+                <a href="2.50.html">
+            
+                    
+                    2.50
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.51" data-path="2.51.html">
+            
+                <a href="2.51.html">
+            
+                    
+                    2.51
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.52" data-path="2.52.html">
+            
+                <a href="2.52.html">
+            
+                    
+                    2.52
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.53" data-path="2.53.html">
+            
+                <a href="2.53.html">
+            
+                    
+                    2.53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.54" data-path="2.54.html">
+            
+                <a href="2.54.html">
+            
+                    
+                    2.54
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.55" data-path="2.55.html">
+            
+                <a href="2.55.html">
+            
+                    
+                    2.55
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.56" data-path="2.56.html">
+            
+                <a href="2.56.html">
+            
+                    
+                    2.56
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.57" data-path="2.58.html">
+            
+                <a href="2.58.html">
+            
+                    
+                    2.57
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.58" data-path="2.58.html">
+            
+                <a href="2.58.html">
+            
+                    
+                    2.58
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.59" data-path="2.59.html">
+            
+                <a href="2.59.html">
+            
+                    
+                    2.59
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.60" data-path="2.60.html">
+            
+                <a href="2.60.html">
+            
+                    
+                    2.60
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.61" data-path="2.61.html">
+            
+                <a href="2.61.html">
+            
+                    
+                    2.61
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.62" data-path="2.62.html">
+            
+                <a href="2.62.html">
+            
+                    
+                    2.62
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.63" data-path="2.63.html">
+            
+                <a href="2.63.html">
+            
+                    
+                    2.63
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.64" data-path="2.64.html">
+            
+                <a href="2.64.html">
+            
+                    
+                    2.64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://jeff-tian.jiwai.win" target="blank" class="gitbook-link">
+            Made by Jeff Tian
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.52</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="252">2.52</h1>
+<h2 id="&#x7EC3;&#x4E60;-252-&#x5728;&#x4E0A;&#x9762;&#x63CF;&#x8FF0;&#x7684;&#x5404;&#x4E2A;&#x5C42;&#x6B21;&#x4E0A;&#x5DE5;&#x4F5C;&#xFF0C;&#x4FEE;&#x6539;&#x56FE;2-9&#x4E2D;&#x6240;&#x793A;&#x7684;&#x65B9;&#x5757;&#x7684;&#x9650;&#x5236;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF1A;">&#x7EC3;&#x4E60; 2.52 &#x5728;&#x4E0A;&#x9762;&#x63CF;&#x8FF0;&#x7684;&#x5404;&#x4E2A;&#x5C42;&#x6B21;&#x4E0A;&#x5DE5;&#x4F5C;&#xFF0C;&#x4FEE;&#x6539;&#x56FE;2-9&#x4E2D;&#x6240;&#x793A;&#x7684;&#x65B9;&#x5757;&#x7684;&#x9650;&#x5236;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF1A;</h2>
+<h2 id="a&#xFF09;&#x7ED9;&#x7EC3;&#x4E60;249&#x7684;&#x57FA;&#x672C;wave&#x753B;&#x5BB6;&#x52A0;&#x5165;&#x67D0;&#x4E9B;&#x7EBF;&#x6BB5;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x7B11;&#x8138;&#xFF09;&#x3002;">a&#xFF09;&#x7ED9;<a href="2.49">&#x7EC3;&#x4E60;2.49</a>&#x7684;&#x57FA;&#x672C;wave&#x753B;&#x5BB6;&#x52A0;&#x5165;&#x67D0;&#x4E9B;&#x7EBF;&#x6BB5;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x7B11;&#x8138;&#xFF09;&#x3002;</h2>
+<h2 id="b&#xFF09;&#x4FEE;&#x6539;-corner-split-&#x7684;&#x6784;&#x9020;&#x6A21;&#x5F0F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x53EA;&#x7528;up-split&#x548C;right-split&#x7684;&#x56FE;&#x50CF;&#x7684;&#x5404;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E24;&#x4E2A;&#xFF09;&#x3002;">b&#xFF09;&#x4FEE;&#x6539; corner-split &#x7684;&#x6784;&#x9020;&#x6A21;&#x5F0F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x53EA;&#x7528;up-split&#x548C;right-split&#x7684;&#x56FE;&#x50CF;&#x7684;&#x5404;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E24;&#x4E2A;&#xFF09;&#x3002;</h2>
+<h2 id="c&#xFF09;&#x4FEE;&#x6539;square-limit&#xFF0C;&#x6362;&#x4E00;&#x79CD;&#x4F7F;&#x7528;square-of-four&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53E6;&#x4E00;&#x79CD;&#x4E0D;&#x540C;&#x6A21;&#x5F0F;&#x7EC4;&#x5408;&#x8D77;&#x5404;&#x4E2A;&#x89D2;&#x533A;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BA9;&#x5927;&#x7684;rogers&#x5148;&#x751F;&#x4ECE;&#x6B63;&#x65B9;&#x5F62;&#x7684;&#x6BCF;&#x4E2A;&#x89D2;&#x5411;&#x5916;&#x770B;&#xFF09;&#x3002;">c&#xFF09;&#x4FEE;&#x6539;square-limit&#xFF0C;&#x6362;&#x4E00;&#x79CD;&#x4F7F;&#x7528;square-of-four&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53E6;&#x4E00;&#x79CD;&#x4E0D;&#x540C;&#x6A21;&#x5F0F;&#x7EC4;&#x5408;&#x8D77;&#x5404;&#x4E2A;&#x89D2;&#x533A;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BA9;&#x5927;&#x7684;Rogers&#x5148;&#x751F;&#x4ECE;&#x6B63;&#x65B9;&#x5F62;&#x7684;&#x6BCF;&#x4E2A;&#x89D2;&#x5411;&#x5916;&#x770B;&#xFF09;&#x3002;</h2>
+<hr>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x76F4;&#x89C2;&#x5730;&#x4F53;&#x9A8C;&#xFF0C;&#x5C06;&#x91C7;&#x7528; js &#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="a&#xFF09;">a&#xFF09;</h3>
+<p>&#x5148;&#x590D;&#x7528;&#x4E00;&#x4E0B;&#x4E0A;&#x4E00;&#x7EC3;&#x4E60;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x589E;&#x52A0;&#x4E86;&#x4E24;&#x6761;&#x773C;&#x7EBF;&#x7684;&#x7EBF;&#x6BB5;&#xFF0C;&#x4E0B;&#x6ED1;&#x770B;&#x6548;&#x679C;&#xFF0C;&#x6709;&#x70B9;&#x5154;&#x65AF;&#x57FA;&#x7684;&#x611F;&#x89C9;&#x3002;</p>
+<pre><code class="lang-eval-js">cons = (x, y) =&gt; [x, y];
+car = (z) =&gt; z[0];
+cdr = (z) =&gt; z[1];
+
+makeVect = cons;
+xCorVect = car;
+yCorVect = cdr;
+
+makeSegment = cons;
+startSegment = car;
+endSegment = cdr;
+
+o = makeVect(0, 0);
+e1 = makeVect(300, 0);
+e2 = makeVect(0, 150); 
+
+s = makeSegment(makeVect(1, 0), makeVect(0, 1)); 
+console.log(&apos;s = &apos;, s);
+
+console.log(startSegment(s));
+console.log(endSegment(s));
+</code></pre>
+<pre><code class="lang-eval-js">makeFrame = (origin, edge1, edge2) =&gt; {
+    return [origin, edge1, edge2];
+};
+
+originFrame = (frame) =&gt; frame[0];
+edge1Frame = (frame) =&gt; frame[1];
+edge2Frame = (frame) =&gt; frame[2];
+
+addVect = (v1, v2) =&gt; makeVect(xCorVect(v1) + xCorVect(v2), yCorVect(v1) + yCorVect(v2));
+subVect = (v1, v2) =&gt; makeVect(xCorVect(v1) - xCorVect(v2), yCorVect(v1) - yCorVect(v2));
+scaleVect = (s, v) =&gt; makeVect(s * xCorVect(v), s * yCorVect(v));
+
+frameCoordMap = (frame) =&gt; {
+    return (v) =&gt; {
+        return addVect(
+            originFrame(frame),
+            addVect(
+                scaleVect(
+                    xCorVect(v),
+                    edge1Frame(frame)
+                ),
+                scaleVect(
+                    yCorVect(v),
+                    edge2Frame(frame)
+                )
+            )
+        );
+    };
+}
+
+f = makeFrame(o, e1, e2);
+</code></pre>
+<pre><code class="lang-eval-js">drawLine = (v1, v2) =&gt; {
+    return (ctx) =&gt; {
+        ctx.beginPath();
+        ctx.moveTo(xCorVect(v1), yCorVect(v1));
+        ctx.lineTo(xCorVect(v2), yCorVect(v2));
+        ctx.stroke();
+    }
+};
+
+segmentsPainter = (segmentList) =&gt; {
+    return (frame) =&gt; (ctx) =&gt; {
+        const m = frameCoordMap(frame);
+
+        segmentList.forEach((segment) =&gt; {
+            drawLine(
+                m(startSegment(segment)),
+                m(endSegment(segment))
+            )(ctx);
+        });
+    }
+}
+
+applyToCanvas = (painter, canvasSelector, setWH = false) =&gt; {
+    const canvas = document.querySelector(canvasSelector);
+
+    if(setWH) {
+        const originalRatio = canvas.width/canvas.height;
+        canvas.width = 1000;
+        canvas.height = canvas.width / originalRatio;
+    }
+
+    const ctx = canvas.getContext(&apos;2d&apos;);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+
+    painter(ctx);
+}
+</code></pre>
+<canvas id="wave-canvas"></canvas>
+
+<pre><code class="lang-eval-js">wavePainter = (frame) =&gt; {
+    const v1 = makeVect(0.4, 0);
+    const v2 = makeVect(0.6, 0);
+    const v3 = makeVect(0, 0.2);
+    const v4 = makeVect(0.3, 0.2);
+    const v5 = makeVect(0.7, 0.2);
+    const v6 = makeVect(0, 0.4);
+    const v7 = makeVect(0.2, 0.4);
+    const v8 = makeVect(0.3, 0.35);
+    const v9 = makeVect(0.42, 0.4);
+    const v10 = makeVect(0.6, 0.4);
+    const v11 = makeVect(0.8, 0.4);
+    const v12 = makeVect(0.3, 0.4);
+    const v13 = makeVect(0.2, 0.55);
+    const v14 = makeVect(0.31, 0.5);
+    const v15 = makeVect(0.6, 0.51);
+    const v16 = makeVect(1, 0.7);
+    const v17 = makeVect(0.5, 0.8);
+    const v18 = makeVect(1, 0.85);
+    const v19 = makeVect(0.35, 1);
+    const v20 = makeVect(0.4, 1);
+    const v21 = makeVect(0.6, 1);
+    const v22 = makeVect(0.7, 1);
+
+    const v23 = makeVect(0.5, 0.1);
+    const v24 = makeVect(0.55, 0.1);
+
+    const v25 = makeVect(0.6, 0.1);
+    const v26 = makeVect(0.65, 0.1);
+
+    return segmentsPainter([
+        makeSegment(v1, v4),
+        makeSegment(v2, v5),
+        makeSegment(v3, v7), 
+        makeSegment(v7, v8),
+        makeSegment(v8, v9),
+        makeSegment(v9, v4),
+        makeSegment(v10, v5),
+        makeSegment(v10, v11),
+        makeSegment(v6, v13),
+        makeSegment(v13, v12),
+        makeSegment(v12, v14),
+        makeSegment(v16, v11),
+        makeSegment(v18, v15),
+        makeSegment(v19, v14),
+        makeSegment(v20, v17),
+        makeSegment(v21, v17),
+        makeSegment(v22, v15),
+
+        makeSegment(v23, v24),
+        makeSegment(v25, v26),
+    ])(frame); 
+}
+
+applyToCanvas(wavePainter(f), &apos;#wave-canvas&apos;);
+</code></pre>
+<pre><code class="lang-eval-js">transformPainter = (painter, origin, corner1, corner2) =&gt; {
+    return (frame) =&gt; {
+        const m = frameCoordMap(frame);
+        const newOrigin = m(origin);
+        return painter(
+            makeFrame(
+                newOrigin, 
+                subVect(m(corner1), newOrigin),
+                subVect(m(corner2), newOrigin)
+            )
+        );
+    }
+}
+
+flipHoriz = (painter) =&gt; {
+    return transformPainter(
+        painter,
+        makeVect(1, 0),
+        makeVect(0, 0),
+        makeVect(1, 1)
+    )
+}
+</code></pre>
+<pre><code class="lang-eval-js">rotateLeft180 = (painter) =&gt; {
+    return transformPainter(
+        painter,
+        makeVect(1, 1),
+        makeVect(0, 1),
+        makeVect(1, 0)
+    )
+}
+</code></pre>
+<pre><code class="lang-eval-js">rotateLeft270 = (painter) =&gt; {
+    return transformPainter(
+        painter,
+        makeVect(1, 0),
+        makeVect(1, 1),
+        makeVect(0, 0)
+    )
+}
+</code></pre>
+<h3 id="b">b</h3>
+<p>&#x53EF;&#x4EE5;&#x548C; <a href="2.44">&#x7EC3;&#x4E60; 2.44</a> &#x5BF9;&#x6BD4;&#x7740;&#x770B;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x7528; rightSplit &#x5B8C;&#x6210;&#x540C;&#x6837;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<canvas id="corner-split-canvas"></canvas>
+
+<pre><code class="lang-eval-js">below = (painter1, painter2) =&gt; {
+  const splitPoint = makeVect(0, 0.5);
+  const paintBelow = transformPainter(
+    painter1,
+    splitPoint,
+    makeVect(1, 0.5),
+    makeVect(0, 1)
+  );
+  const paintUp = transformPainter(
+    painter2,
+    makeVect(0, 0),
+    makeVect(1, 0),
+    splitPoint
+  );
+
+  return frame =&gt; ctx =&gt; {
+    paintBelow(frame)(ctx);
+    paintUp(frame)(ctx);
+  }
+}
+
+beside = (painter1, painter2) =&gt; {
+    const splitPoint = makeVect(0.5, 0);
+    const paintLeft = transformPainter(
+        painter1, 
+        makeVect(0, 0),
+        splitPoint,
+        makeVect(0, 1)
+    );
+    const paintRight = transformPainter(
+        painter2,
+        splitPoint,
+        makeVect(1, 0),
+        makeVect(0.5, 1)
+    );
+
+    return frame =&gt; ctx =&gt; {
+        paintLeft(frame)(ctx);
+        paintRight(frame)(ctx);
+    };
+};
+
+rightSplit = (painter, n) =&gt; {
+    if (n === 0) {
+        return painter;
+    }
+
+    const smaller = rightSplit(painter, n-1);
+    return beside(painter, below(smaller, smaller));
+};
+
+rotateLeft90 = (painter) =&gt; {
+  return transformPainter(
+    painter,
+    makeVect(0, 1),
+    makeVect(0, 0),
+    makeVect(1, 1)
+  )
+}
+
+cornerSplit = (painter, n) =&gt; {
+    if(n === 0) {
+        return painter;
+    }
+
+    const right = rightSplit(painter, n-1);
+    const up = rotateLeft90(
+        rightSplit(
+            rotateLeft90(
+                rotateLeft90(
+                    rotateLeft90(
+                        painter
+                    )
+                )
+            ), 
+            n-1
+        )
+    );
+
+    const topLeft = beside(up, up);
+    const bottomRight = below(right, right);
+    const corner = cornerSplit(painter, n-1);
+
+    return beside(
+            below(painter, topLeft), 
+            below(bottomRight, corner)
+    );
+}
+
+applyToCanvas(cornerSplit(wavePainter, 4)(f), &apos;#corner-split-canvas&apos;);
+</code></pre>
+<h3 id="c">c</h3>
+<canvas id="square-of-four-canvas"></canvas>
+
+<pre><code class="lang-eval-js">squareOfFour = (tl, tr, bl, br) =&gt; {
+    return (painter) =&gt; {
+        const top = beside(tl(painter), tr(painter));
+        const bottom = beside(bl(painter), br(painter));
+
+        return below(bottom, top);
+    };
+};
+
+id = x =&gt; x;
+flipVert = (painter) =&gt; {
+    return transformPainter(
+        painter,
+        makeVect(0, 1),
+        makeVect(1, 1),
+        makeVect(0, 0)
+    );
+};
+
+squareLimit = (painter, n) =&gt; {
+    const combine4 = squareOfFour(flipHoriz, id, rotateLeft180, flipVert);
+
+    return combine4(cornerSplit(painter, n));
+};
+
+applyToCanvas(squareLimit(wavePainter, 4)(f), &apos;#square-of-four-canvas&apos;);
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x89E3;&#x51B3; <a href="2.44">&#x7EC3;&#x4E60; 2.44</a> &#x6700;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x66FF;&#x6362; wavePainter &#x4E3A; jeffTianPainter &#x5373;&#x53EF;&#x3002;</p>
+<p><img src="https://images.ctfassets.net/qixg1o8tujmf/7m0jrKYaDBwEvlc5lo8nt6/6d50a5050d9cdc0d4d2047e35feac292/10648733_696750647079056_2800539603462658695_o.jpg" alt="Jeff Tian" style="width: 300px; height: 150px;" id="jeff-tian"></p>
+<canvas id="solved" style="width: 500px; height: 500px;"></canvas>
+
+<pre><code class="lang-eval-js">jeffTianPainter = (frame) =&gt; ctx =&gt; {
+    const jeffTian = document.querySelector(&apos;#jeff-tian&apos;);
+
+    const m = frameCoordMap(frame);
+    const v1 = makeVect(0, 0);
+    const v2 = makeVect(1, 1);
+
+    const x = xCorVect(m(v1));
+    const y = yCorVect(m(v1));
+    const w = xCorVect(m(v2)) - x;
+    const h = yCorVect(m(v2)) - y;
+
+    ctx.drawImage(jeffTian, 0, 0, jeffTian.naturalWidth, jeffTian.naturalHeight, x, y, w, h);
+};
+
+applyToCanvas(squareLimit(jeffTianPainter, 4)(f), &apos;#solved&apos;, false);
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x770B;&#x8D77;&#x6765;&#xFF0C;&#x4ECD;&#x7136;&#x4E0D;&#x662F;&#x9884;&#x671F;&#x7684;&#x3002;&#x867D;&#x7136;&#x89E3;&#x51B3;&#x4E86;&#x5B50;&#x753B;&#x5E03;&#x6CA1;&#x6709;&#x65CB;&#x8F6C;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5E26;&#x4E86;&#x65B0;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x7FFB;&#x8F6C;&#x64CD;&#x4F5C;&#x65E0;&#x6548;&#x3002;&#x73B0;&#x5728;&#x77E5;&#x9053;&#x4E86;&#xFF0C;<a href="2.44">2.44</a> &#x4E2D;&#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x4F7F;&#x7528;&#x4E86; ctx.scale()&#xFF0C;&#x5BFC;&#x81F4;&#x5B50;&#x753B;&#x5E03;&#x7684;&#x65CB;&#x8F6C;&#x88AB;&#x64A4;&#x9500;&#x4E86;&#x3002;&#x800C;&#x73B0;&#x5728;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x4F7F;&#x7528; ctx.scale()&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5; drawImage&#xFF0C;&#x5B9E;&#x73B0;&#x4E0D;&#x4E86;&#x6C34;&#x5E73;&#x6216;&#x8005;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x65CB;&#x8F6C;&#x3002;</p>
+<p>segmentsPainter &#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x77E2;&#x91CF;&#x5F62;&#x5F0F;&#x3002;&#x8981;&#x5F7B;&#x5E95;&#x89E3;&#x51B3;&#x753B;&#x56FE;&#x7247;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5FC5;&#x987B;&#x5BF9; canvas &#x505A;&#x6DF1;&#x5EA6;&#x4ECB;&#x5165;&#xFF0C;&#x6216;&#x8005;&#x9010;&#x50CF;&#x7D20;&#x8BFB;&#x53D6;&#x56FE;&#x7247;&#xFF0C;&#x4E00;&#x4E2A;&#x70B9;&#x4E00;&#x4E2A;&#x70B9;&#x7684;&#x53BB;&#x753B;(&#x5C06;&#x56FE;&#x7247;&#x4E0A;&#x6BCF;&#x4E2A;&#x70B9;&#x5728;&#x753B;&#x5E03;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x90FD;&#x505A;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;)&#x3002;</p>
+<h4 id="&#x50CF;&#x7D20;&#x70B9;&#x753B;&#x5BB6;&#xFF1A;">&#x50CF;&#x7D20;&#x70B9;&#x753B;&#x5BB6;&#xFF1A;</h4>
+<canvas id="pixel-canvas"></canvas>
+
+<pre><code class="lang-eval-js">pixelPainter = (img) =&gt; (frame) =&gt; (ctx) =&gt; {
+    const m = frameCoordMap(frame);
+
+    const o = originFrame(frame);
+    const e1 = edge1Frame(frame);
+    const e2 = edge2Frame(frame);
+
+    const frameWidth = Math.round(Math.sqrt(
+                Math.pow(xCorVect((e1)) - xCorVect(o), 2) +
+                Math.pow(yCorVect((e1)) - yCorVect(o), 2)
+    ));
+    const frameHeight = Math.round(Math.sqrt(
+        Math.pow(xCorVect((e2)) - xCorVect(o), 2) +
+        Math.pow(yCorVect((e2)) - yCorVect(o), 2)
+    ));
+
+    const wStep = 1/frameWidth;
+    const hStep = 1/frameHeight;
+
+    for (let y = 0; y &lt;= 1; y += hStep) {
+        for (let x = 0; x &lt;= 1; x += wStep) {
+            const logicalPixel = makeVect(x, y);
+            const transformedPixel = m(logicalPixel);
+
+            const frameX = xCorVect(transformedPixel);
+            const frameY = yCorVect(transformedPixel);
+
+            const imageX = x * img.naturalWidth;
+            const imageY = y * img.naturalHeight;
+
+            ctx.drawImage(img, 
+                imageX, imageY, 1, 1, 
+                frameX, frameY, 1, 1);
+        }
+    }
+};
+
+applyToCanvas(pixelPainter(document.getElementById(&apos;jeff-tian&apos;))(f), &apos;#pixel-canvas&apos;, false);
+</code></pre>
+<h4 id="&#x5BF9;&#x50CF;&#x7D20;&#x70B9;&#x753B;&#x5BB6;&#x5E94;&#x7528;-squarelimit-&#x6548;&#x679C;">&#x5BF9;&#x50CF;&#x7D20;&#x70B9;&#x753B;&#x5BB6;&#x5E94;&#x7528; squareLimit &#x6548;&#x679C;</h4>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5C31;&#x4FEE;&#x590D;&#x4E86;<a href="2.44">2.44</a>&#x4E2D;&#x7684; squareLimit &#x5728; Jeff Tian Painter &#x4E0A;&#x7684;&#x5E94;&#x7528;&#xFF01;</p>
+<p>&#x4F46;&#x662F;&#x6709;&#x4E24;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#xFF1A;</p>
+<p>1&#x3001;&#x6027;&#x80FD;&#x4E0D;&#x591F;&#x597D;&#xFF1B;</p>
+<p>2&#x3001;&#x6E05;&#x6670;&#x5EA6;&#x4E0D;&#x9AD8;&#x3002;</p>
+<canvas id="square-limit-to-pixel"></canvas>
+
+<pre><code class="lang-eval-js">
+const jeffTianPixel = pixelPainter(document.getElementById(&apos;jeff-tian&apos;));
+
+applyToCanvas(squareLimit(jeffTianPixel, 2)(f), &apos;#square-limit-to-pixel&apos;, false);
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x8981;&#x5B9E;&#x73B0;&#x5411;&#x5916;&#x770B;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x53D8;&#x5F62;&#x4E00;&#x4E0B;&#xFF0C;&#x5373;&#x5C06;&#x6700;&#x521D;&#x7684; wavePainter &#x6C34;&#x5E73;&#x7FFB;&#x8F6C;&#xFF0C;&#x505A;&#x4E3A;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x753B;&#x5BB6;&#xFF1A;</p>
+<canvas id="square-of-four-2-canvas"></canvas>
+
+<pre><code class="lang-eval-js">const squareLimit = (painter, n) =&gt; {
+    const combine4 = squareOfFour(flipHoriz, id, rotateLeft180, flipVert);
+
+    return combine4(cornerSplit(painter, n));
+};
+
+applyToCanvas(squareLimit(flipHoriz(wavePainter), 4)(f), &apos;#square-of-four-2-canvas&apos;);
+</code></pre>
+<pre><code class="lang-eval-js">console.log(&apos;done&apos;);
+</code></pre>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.51.html" class="navigation navigation-prev " aria-label="Previous page: 2.51">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.53.html" class="navigation navigation-next " aria-label="Next page: 2.53">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.52","level":"1.3.52","depth":2,"next":{"title":"2.53","level":"1.3.53","depth":2,"path":"2.-构造数据抽象/2.53.md","ref":"2.-构造数据抽象/2.53.md","articles":[]},"previous":{"title":"2.51","level":"1.3.51","depth":2,"path":"2.-构造数据抽象/2.51.md","ref":"2.-构造数据抽象/2.51.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.52.md","mtime":"2022-06-15T11:32:51.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-15T11:33:35.139Z"},"basePath":"..","book":{"language":"zh_CN"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+        <div id="uniheart-footer"></div>
+        <script type="text/javascript">
+            window.addEventListener('load', function (){
+                console.log('gitbook=', gitbook);
+                gitbook.footer.init();
+            });
+        </script>
+    </body>
+</html>
+

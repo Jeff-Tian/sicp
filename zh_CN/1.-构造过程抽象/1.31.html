@@ -1,0 +1,1472 @@
+
+<!DOCTYPE HTML>
+<html lang="zh_CN" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.31 · SICP | 计算机程序的构造和解释</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    <link rel="stylesheet" href="../../gitbook/uniheart-rich-footer.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex2/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.32.html" />
+    
+    
+    <link rel="prev" href="1.30.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    构造过程抽象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1.html">
+            
+                <a href="1.1.html">
+            
+                    
+                    1.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2.html">
+            
+                <a href="1.2.html">
+            
+                    
+                    1.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.2.3.html">
+            
+                <a href="1.2.3.html">
+            
+                    
+                    1.2.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.3.html">
+            
+                <a href="1.3.html">
+            
+                    
+                    1.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.4.html">
+            
+                <a href="1.4.html">
+            
+                    
+                    1.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.22.html">
+            
+                <a href="1.22.html">
+            
+                    
+                    1.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.23.html">
+            
+                <a href="1.23.html">
+            
+                    
+                    1.23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.24.html">
+            
+                <a href="1.24.html">
+            
+                    
+                    1.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.25.html">
+            
+                <a href="1.25.html">
+            
+                    
+                    1.25
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.26.html">
+            
+                <a href="1.26.html">
+            
+                    
+                    1.26
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.27.html">
+            
+                <a href="1.27.html">
+            
+                    
+                    1.27
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="1.28.html">
+            
+                <a href="1.28.html">
+            
+                    
+                    1.28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1.29.html">
+            
+                <a href="1.29.html">
+            
+                    
+                    1.29
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1.30.html">
+            
+                <a href="1.30.html">
+            
+                    
+                    1.30
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.15" data-path="1.31.html">
+            
+                <a href="1.31.html">
+            
+                    
+                    1.31
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="1.32.html">
+            
+                <a href="1.32.html">
+            
+                    
+                    1.32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="1.33.html">
+            
+                <a href="1.33.html">
+            
+                    
+                    1.33
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="1.34.html">
+            
+                <a href="1.34.html">
+            
+                    
+                    1.34
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="1.35.html">
+            
+                <a href="1.35.html">
+            
+                    
+                    1.35
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="1.36.html">
+            
+                <a href="1.36.html">
+            
+                    
+                    1.36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="1.37.html">
+            
+                <a href="1.37.html">
+            
+                    
+                    1.37
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="1.38.html">
+            
+                <a href="1.38.html">
+            
+                    
+                    1.38
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2.-构造数据抽象/README.md">
+            
+                <span>
+            
+                    
+                    构造数据抽象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2.-构造数据抽象/2.1.html">
+            
+                <a href="../2.-构造数据抽象/2.1.html">
+            
+                    
+                    2.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2.-构造数据抽象/2.2.html">
+            
+                <a href="../2.-构造数据抽象/2.2.html">
+            
+                    
+                    2.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2.-构造数据抽象/2.3.html">
+            
+                <a href="../2.-构造数据抽象/2.3.html">
+            
+                    
+                    2.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2.-构造数据抽象/2.4.html">
+            
+                <a href="../2.-构造数据抽象/2.4.html">
+            
+                    
+                    2.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2.-构造数据抽象/2.5.html">
+            
+                <a href="../2.-构造数据抽象/2.5.html">
+            
+                    
+                    2.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2.-构造数据抽象/2.6.html">
+            
+                <a href="../2.-构造数据抽象/2.6.html">
+            
+                    
+                    2.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../2.-构造数据抽象/2.7.html">
+            
+                <a href="../2.-构造数据抽象/2.7.html">
+            
+                    
+                    2.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../2.-构造数据抽象/2.8.html">
+            
+                <a href="../2.-构造数据抽象/2.8.html">
+            
+                    
+                    2.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../2.-构造数据抽象/2.9.html">
+            
+                <a href="../2.-构造数据抽象/2.9.html">
+            
+                    
+                    2.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../2.-构造数据抽象/2.10.html">
+            
+                <a href="../2.-构造数据抽象/2.10.html">
+            
+                    
+                    2.10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../2.-构造数据抽象/2.11.html">
+            
+                <a href="../2.-构造数据抽象/2.11.html">
+            
+                    
+                    2.11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../2.-构造数据抽象/2.12.html">
+            
+                <a href="../2.-构造数据抽象/2.12.html">
+            
+                    
+                    2.12
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../2.-构造数据抽象/2.13.html">
+            
+                <a href="../2.-构造数据抽象/2.13.html">
+            
+                    
+                    2.13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../2.-构造数据抽象/2.14.html">
+            
+                <a href="../2.-构造数据抽象/2.14.html">
+            
+                    
+                    2.14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../2.-构造数据抽象/2.15.html">
+            
+                <a href="../2.-构造数据抽象/2.15.html">
+            
+                    
+                    2.15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../2.-构造数据抽象/2.16.html">
+            
+                <a href="../2.-构造数据抽象/2.16.html">
+            
+                    
+                    2.16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../2.-构造数据抽象/2.17.html">
+            
+                <a href="../2.-构造数据抽象/2.17.html">
+            
+                    
+                    2.17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../2.-构造数据抽象/2.18.html">
+            
+                <a href="../2.-构造数据抽象/2.18.html">
+            
+                    
+                    2.18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../2.-构造数据抽象/2.19.html">
+            
+                <a href="../2.-构造数据抽象/2.19.html">
+            
+                    
+                    2.19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../2.-构造数据抽象/2.20.html">
+            
+                <a href="../2.-构造数据抽象/2.20.html">
+            
+                    
+                    2.20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../2.-构造数据抽象/2.21.html">
+            
+                <a href="../2.-构造数据抽象/2.21.html">
+            
+                    
+                    2.21
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../2.-构造数据抽象/2.22.html">
+            
+                <a href="../2.-构造数据抽象/2.22.html">
+            
+                    
+                    2.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../2.-构造数据抽象/2.23.html">
+            
+                <a href="../2.-构造数据抽象/2.23.html">
+            
+                    
+                    2.23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../2.-构造数据抽象/2.24.html">
+            
+                <a href="../2.-构造数据抽象/2.24.html">
+            
+                    
+                    2.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../2.-构造数据抽象/2.25.html">
+            
+                <a href="../2.-构造数据抽象/2.25.html">
+            
+                    
+                    2.25
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../2.-构造数据抽象/2.26.html">
+            
+                <a href="../2.-构造数据抽象/2.26.html">
+            
+                    
+                    2.26
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="../2.-构造数据抽象/2.27.html">
+            
+                <a href="../2.-构造数据抽象/2.27.html">
+            
+                    
+                    2.27
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="../2.-构造数据抽象/2.28.html">
+            
+                <a href="../2.-构造数据抽象/2.28.html">
+            
+                    
+                    2.28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="../2.-构造数据抽象/2.29.html">
+            
+                <a href="../2.-构造数据抽象/2.29.html">
+            
+                    
+                    2.29
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="../2.-构造数据抽象/2.30.html">
+            
+                <a href="../2.-构造数据抽象/2.30.html">
+            
+                    
+                    2.30
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="../2.-构造数据抽象/2.31.html">
+            
+                <a href="../2.-构造数据抽象/2.31.html">
+            
+                    
+                    2.31
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="../2.-构造数据抽象/2.32.html">
+            
+                <a href="../2.-构造数据抽象/2.32.html">
+            
+                    
+                    2.32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="../2.-构造数据抽象/2.33.html">
+            
+                <a href="../2.-构造数据抽象/2.33.html">
+            
+                    
+                    2.33
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="../2.-构造数据抽象/2.34.html">
+            
+                <a href="../2.-构造数据抽象/2.34.html">
+            
+                    
+                    2.34
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="../2.-构造数据抽象/2.35.html">
+            
+                <a href="../2.-构造数据抽象/2.35.html">
+            
+                    
+                    2.35
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="../2.-构造数据抽象/2.36.html">
+            
+                <a href="../2.-构造数据抽象/2.36.html">
+            
+                    
+                    2.36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.37" data-path="../2.-构造数据抽象/2.37.html">
+            
+                <a href="../2.-构造数据抽象/2.37.html">
+            
+                    
+                    2.37
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.38" data-path="../2.-构造数据抽象/2.38.html">
+            
+                <a href="../2.-构造数据抽象/2.38.html">
+            
+                    
+                    2.38
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.39" data-path="../2.-构造数据抽象/2.39.html">
+            
+                <a href="../2.-构造数据抽象/2.39.html">
+            
+                    
+                    2.39
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.40" data-path="../2.-构造数据抽象/2.40.html">
+            
+                <a href="../2.-构造数据抽象/2.40.html">
+            
+                    
+                    2.40
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.41" data-path="../2.-构造数据抽象/2.41.html">
+            
+                <a href="../2.-构造数据抽象/2.41.html">
+            
+                    
+                    2.41
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.42" data-path="../2.-构造数据抽象/2.42.html">
+            
+                <a href="../2.-构造数据抽象/2.42.html">
+            
+                    
+                    2.42
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.43" data-path="../2.-构造数据抽象/2.43.html">
+            
+                <a href="../2.-构造数据抽象/2.43.html">
+            
+                    
+                    2.43
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.44" data-path="../2.-构造数据抽象/2.44.html">
+            
+                <a href="../2.-构造数据抽象/2.44.html">
+            
+                    
+                    2.44
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.45" data-path="../2.-构造数据抽象/2.45.html">
+            
+                <a href="../2.-构造数据抽象/2.45.html">
+            
+                    
+                    2.45
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.46" data-path="../2.-构造数据抽象/2.46.html">
+            
+                <a href="../2.-构造数据抽象/2.46.html">
+            
+                    
+                    2.46
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.47" data-path="../2.-构造数据抽象/2.47.html">
+            
+                <a href="../2.-构造数据抽象/2.47.html">
+            
+                    
+                    2.47
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.48" data-path="../2.-构造数据抽象/2.48.html">
+            
+                <a href="../2.-构造数据抽象/2.48.html">
+            
+                    
+                    2.48
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.49" data-path="../2.-构造数据抽象/2.49.html">
+            
+                <a href="../2.-构造数据抽象/2.49.html">
+            
+                    
+                    2.49
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.50" data-path="../2.-构造数据抽象/2.50.html">
+            
+                <a href="../2.-构造数据抽象/2.50.html">
+            
+                    
+                    2.50
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.51" data-path="../2.-构造数据抽象/2.51.html">
+            
+                <a href="../2.-构造数据抽象/2.51.html">
+            
+                    
+                    2.51
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.52" data-path="../2.-构造数据抽象/2.52.html">
+            
+                <a href="../2.-构造数据抽象/2.52.html">
+            
+                    
+                    2.52
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.53" data-path="../2.-构造数据抽象/2.53.html">
+            
+                <a href="../2.-构造数据抽象/2.53.html">
+            
+                    
+                    2.53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.54" data-path="../2.-构造数据抽象/2.54.html">
+            
+                <a href="../2.-构造数据抽象/2.54.html">
+            
+                    
+                    2.54
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.55" data-path="../2.-构造数据抽象/2.55.html">
+            
+                <a href="../2.-构造数据抽象/2.55.html">
+            
+                    
+                    2.55
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.56" data-path="../2.-构造数据抽象/2.56.html">
+            
+                <a href="../2.-构造数据抽象/2.56.html">
+            
+                    
+                    2.56
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.57" data-path="../2.-构造数据抽象/2.58.html">
+            
+                <a href="../2.-构造数据抽象/2.58.html">
+            
+                    
+                    2.57
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.58" data-path="../2.-构造数据抽象/2.58.html">
+            
+                <a href="../2.-构造数据抽象/2.58.html">
+            
+                    
+                    2.58
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.59" data-path="../2.-构造数据抽象/2.59.html">
+            
+                <a href="../2.-构造数据抽象/2.59.html">
+            
+                    
+                    2.59
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.60" data-path="../2.-构造数据抽象/2.60.html">
+            
+                <a href="../2.-构造数据抽象/2.60.html">
+            
+                    
+                    2.60
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.61" data-path="../2.-构造数据抽象/2.61.html">
+            
+                <a href="../2.-构造数据抽象/2.61.html">
+            
+                    
+                    2.61
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.62" data-path="../2.-构造数据抽象/2.62.html">
+            
+                <a href="../2.-构造数据抽象/2.62.html">
+            
+                    
+                    2.62
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.63" data-path="../2.-构造数据抽象/2.63.html">
+            
+                <a href="../2.-构造数据抽象/2.63.html">
+            
+                    
+                    2.63
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.64" data-path="../2.-构造数据抽象/2.64.html">
+            
+                <a href="../2.-构造数据抽象/2.64.html">
+            
+                    
+                    2.64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://jeff-tian.jiwai.win" target="blank" class="gitbook-link">
+            Made by Jeff Tian
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.31</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="131">1.31</h1>
+<h2 id="&#x7EC3;&#x4E60;-131">&#x7EC3;&#x4E60; 1.31</h2>
+<p>a) &#x8FC7;&#x7A0B;sum&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x9AD8;&#x9636;&#x8FC7;&#x7A0B;&#x8868;&#x793A;&#x7684;&#x5927;&#x91CF;&#x7C7B;&#x4F3C;&#x62BD;&#x8C61;&#x4E2D;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x8BF7;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x7684;&#x79F0;&#x4E3A;product&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x5728;&#x7ED9;&#x5B9A;&#x8303;&#x56F4;&#x4E2D;&#x5404;&#x70B9;&#x7684;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x503C;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x8BF7;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x7528;product&#x5B9A;&#x4E49;factorial&#x3002;&#x53E6;&#x8BF7;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x516C;&#x5F0F;&#x8BA1;&#x7B97;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C0;</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span></span></span></span>&#x7684;&#x8FD1;&#x4F3C;&#x503C;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>&#x3C0;</mi><mn>4</mn></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mo>&#x22C5;</mo><mn>4</mn><mo>&#x22C5;</mo><mn>4</mn><mo>&#x22C5;</mo><mn>6</mn><mo>&#x22C5;</mo><mn>6</mn><mo>&#x22C5;</mo><mn>8...</mn></mrow><mrow><mn>3</mn><mo>&#x22C5;</mo><mn>3</mn><mo>&#x22C5;</mo><mn>5</mn><mo>&#x22C5;</mo><mn>5</mn><mo>&#x22C5;</mo><mn>7</mn><mo>&#x22C5;</mo><mn>7...</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\frac{\pi}{4} = \frac{2\cdot 4\cdot 4\cdot 6\cdot 6\cdot 8...}{3\cdot 3\cdot 5\cdot 5\cdot 7\cdot 7...}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7935600000000003em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">7</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">8</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>b) &#x5982;&#x679C;&#x4F60;&#x7684;product&#x8FC7;&#x7A0B;&#x751F;&#x6210;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x5B83;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#xFF0C;&#x8BF7;&#x5199;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x9012;&#x5F52;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p><link rel="stylesheet" type="text/css" href="../../coding-js/deps/codemirror/lib/codemirror.css"></p>
+<p><link rel="stylesheet" type="text/css" href="../../coding-js/coding.css"></p>
+<link rel="stylesheet" type="text/css" href="../../coding-js/base.css">
+
+<script src="../../coding-js/deps/codemirror/lib/codemirror.js"></script>
+<script src="../../coding-js/deps/jquery.min.js"></script>
+<script src="../../coding-js/coding.js"> </script>
+
+<script src="../../coding-js/deps/codemirror/mode/scheme/scheme.js"></script>
+
+<script>
+  c = new CodingJS('../../coding-js/');
+</script>
+
+<p>a) &#x8FED;&#x4EE3;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<div id="scheme-1">
+(define (product term a next b)
+    (define (iter a result)
+        (if (&gt; a b)
+            result
+            (iter (next a) (* result (term a)))))
+        (iter a 1))
+
+(define (identity x) x)
+(define (inc n) (+ n 1))
+(define (factorial n)
+    (product identity 1 inc n))
+
+(factorial 10)
+
+(define (pi-product a b)
+    (define (pi-term a)
+        (/ (* a (+ a 2)) (* (+ a 1) (+ a 1))))
+    (define (pi-next a)
+        (+ a 2))
+    (product pi-term a pi-next b))
+
+(* 4 (pi-product 2 1000))
+
+</div>
+
+<script>
+  c.prompt("scheme-1");
+</script>
+
+
+<p>b) &#x9012;&#x5F52;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<div id="scheme-2">
+(define (product term a next b)
+    (if (&gt; a b)
+        1
+        (*  (term a)
+            (product term (next a) next b))))
+(define (identity x) x)
+(define (inc n) (+ n 1))
+(define (factorial n)
+    (product identity 1 inc n))
+
+(factorial 10)
+</div>
+
+<script>
+    c.prompt("scheme-2");
+</script>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.30.html" class="navigation navigation-prev " aria-label="Previous page: 1.30">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.32.html" class="navigation navigation-next " aria-label="Next page: 1.32">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.31","level":"1.2.15","depth":2,"next":{"title":"1.32","level":"1.2.16","depth":2,"path":"1.-构造过程抽象/1.32.md","ref":"1.-构造过程抽象/1.32.md","articles":[]},"previous":{"title":"1.30","level":"1.2.14","depth":2,"path":"1.-构造过程抽象/1.30.md","ref":"1.-构造过程抽象/1.30.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"1.-构造过程抽象/1.31.md","mtime":"2022-06-15T11:32:51.119Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-15T11:33:35.139Z"},"basePath":"..","book":{"language":"zh_CN"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+        <div id="uniheart-footer"></div>
+        <script type="text/javascript">
+            window.addEventListener('load', function (){
+                console.log('gitbook=', gitbook);
+                gitbook.footer.init();
+            });
+        </script>
+    </body>
+</html>
+

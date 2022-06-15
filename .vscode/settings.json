@@ -1,0 +1,7 @@
+{
+    "editor.snippetSuggestions": "bottom",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "search.exclude": {
+        "**/node_modules": false
+    }
+}

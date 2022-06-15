@@ -1,0 +1,726 @@
+
+<!DOCTYPE HTML>
+<html lang="en_US" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>19 · SICP | 计算机程序的构造和解释</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    <link rel="stylesheet" href="../../gitbook/uniheart-rich-footer.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex2/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.20.html" />
+    
+    
+    <link rel="prev" href="1.18.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Building Abstractions With Procedures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1.html">
+            
+                <a href="1.1.html">
+            
+                    
+                    1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2.html">
+            
+                <a href="1.2.html">
+            
+                    
+                    2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3.html">
+            
+                <a href="1.3.html">
+            
+                    
+                    3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4.html">
+            
+                <a href="1.4.html">
+            
+                    
+                    4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5.html">
+            
+                <a href="1.5.html">
+            
+                    
+                    5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6.html">
+            
+                <a href="1.6.html">
+            
+                    
+                    6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7.html">
+            
+                <a href="1.7.html">
+            
+                    
+                    7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8.html">
+            
+                <a href="1.8.html">
+            
+                    
+                    8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9.html">
+            
+                <a href="1.9.html">
+            
+                    
+                    9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10.html">
+            
+                <a href="1.10.html">
+            
+                    
+                    10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11.html">
+            
+                <a href="1.11.html">
+            
+                    
+                    11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="1.12.html">
+            
+                <a href="1.12.html">
+            
+                    
+                    12
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1.13.html">
+            
+                <a href="1.13.html">
+            
+                    
+                    13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1.14.html">
+            
+                <a href="1.14.html">
+            
+                    
+                    14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="1.15.html">
+            
+                <a href="1.15.html">
+            
+                    
+                    15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="1.16.html">
+            
+                <a href="1.16.html">
+            
+                    
+                    16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="1.17.html">
+            
+                <a href="1.17.html">
+            
+                    
+                    17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="1.18.html">
+            
+                <a href="1.18.html">
+            
+                    
+                    18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.19" data-path="1.19.html">
+            
+                <a href="1.19.html">
+            
+                    
+                    19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="1.20.html">
+            
+                <a href="1.20.html">
+            
+                    
+                    20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="1.21.html">
+            
+                <a href="1.21.html">
+            
+                    
+                    21
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="1.39.html">
+            
+                <a href="1.39.html">
+            
+                    
+                    39
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="1.40.html">
+            
+                <a href="1.40.html">
+            
+                    
+                    40
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="1.41.html">
+            
+                <a href="1.41.html">
+            
+                    
+                    41
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="1.42.html">
+            
+                <a href="1.42.html">
+            
+                    
+                    42
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="1.43.html">
+            
+                <a href="1.43.html">
+            
+                    
+                    43
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="1.44.html">
+            
+                <a href="1.44.html">
+            
+                    
+                    44
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="1.45.html">
+            
+                <a href="1.45.html">
+            
+                    
+                    45
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="1.46.html">
+            
+                <a href="1.46.html">
+            
+                    
+                    46
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://jeff-tian.jiwai.win" target="blank" class="gitbook-link">
+            Made by Jeff Tian
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >19</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="119">1.19</h1>
+<h2 id="exercise-119-there-is-a-clever-algorithm-for-computing-the-fibonacci-numbers-in-a-logarithmic-number-of-steps-recall-the-transformation-of-the-state-variables-a-and-b-in-the-fib-iter-process-of-122-a-&#x2190;-a--b-and-b-&#x2190;-a-call-this-transformation-t-and-observe-that-applying-t-over-and-over-again-n-times-starting-with-1-and-0-produces-the-pair-fibn1-and-fibn-in-other-words-the-fibonacci-numbers-are-produced-by-applying-tn-the-nth-nth-nth-power-of-the-transformation-t-starting-with-the-pair-1-0-now-consider-t-to-be-the-special-case-of-p0-and-q1-in-a-family-of-transformations-tpq-where-tpq-transforms-the-pair-ab-according-to-a&#x2190;bqaqap-and-b&#x2190;bpaq-show-that-if-we-apply-such-a-transformation-tpq-twice-the-effect-is-the-same-as-using-a-single-transformation-tp&#x2032;q&#x2032;-of-the-same-form-and-compute-p&#x2032;-and-q&#x2032;-in-terms-of-p-and-q-this-gives-us-an-explicit-way-to-square-these-transformations-and-thus-we-can-compute-tn-tn-tn-using-successive-squaring-as-in-the-fast-expt-procedure-put-this-all-together-to-complete-the-following-procedure-which-runs-in-a-logarithmic-number-of-steps">Exercise 1.19: There is a clever algorithm for computing the Fibonacci numbers in a logarithmic number of steps. Recall the transformation of the state variables a and b in the fib-iter process of 1.2.2: a &#x2190; a + b and b &#x2190; a. Call this transformation T, and observe that applying T over and over again n times, starting with 1 and 0, produces the pair Fib(n+1) and Fib(n). In other words, the Fibonacci numbers are produced by applying Tn, the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex"> n^{th} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span> power of the transformation T, starting with the pair (1, 0). Now consider T to be the special case of p=0 and q=1 in a family of transformations Tpq, where Tpq transforms the pair (a,b) according to a&#x2190;bq+aq+ap and b&#x2190;bp+aq. Show that if we apply such a transformation Tpq twice, the effect is the same as using a single transformation Tp&#x2032;q&#x2032; of the same form, and compute p&#x2032; and q&#x2032; in terms of p and q. This gives us an explicit way to square these transformations, and thus we can compute <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex"> T^n </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> using successive squaring, as in the <code>fast-expt</code> procedure. Put this all together to complete the following procedure, which runs in a logarithmic number of steps:</h2>
+<pre><code class="lang-eval-scheme">(define (fib n)
+    (fib-iter 1 0 0 1 n))
+
+(define (fib-iter a b p q count)
+  (cond ((= count 0) 
+         b)
+        ((even? count)
+         (fib-iter a
+                   b
+                   &#x27E8;??&#x27E9;  ;compute p&apos;
+                   &#x27E8;??&#x27E9;  ;compute q&apos;
+                   (/ count 2)))
+        (else 
+         (fib-iter (+ (* b q) 
+                      (* a q) 
+                      (* a p))
+                   (+ (* b p) 
+                      (* a q))
+                   p
+                   q
+                   (- count 1)))))
+</code></pre>
+<p>T is the transformation of applying </p>
+<pre><code>a &lt;- a + b
+b &lt;- a
+</code></pre><p>Tpq is </p>
+<pre><code>a &lt;- bq + aq + ap
+b &lt;- bp + aq
+</code></pre><p>and T is T10 actually.</p>
+<p>Applying Tpq twice, it transforms (a, b) into (a2, b2)</p>
+<pre><code>a1 = bq + aq + ap
+b1 = bp + aq
+
+a2 = b1q + a1q + a1p 
+   = (bp + aq)q + (bq + aq + ap)q + (bq + aq + ap)p
+   = bpq + aqq + bqq + aqq + apq + bqp + aqp + app
+   = b(pq + qq + qp) + a(qq + qq + pq + qp + pp)
+   = b(pq + qq + qp) + a(pq + qq + qp) + a(qq + pp)
+b2 = b1p + a1q 
+   = (bp + aq)p + (bq + aq + ap)q
+   = bpp + aqp + bqq + aqq + apq
+   = b(pp + qq) + a(qp + qq + pq)
+</code></pre><p>let p&#x2032; = pp + qq, and q&#x2032; = 2pq + qq, we can simplify the above to</p>
+<pre><code>a2 = bq&#x2032; + aq&#x2032; + ap&#x2032;
+b2 = bp&#x2032; + aq&#x2032;
+</code></pre><p>That is to say: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi mathvariant="normal">_</mi><msup><mrow><mi>p</mi><mi>q</mi></mrow><mn>2</mn></msup><mo>=</mo><mi>T</mi><mi mathvariant="normal">_</mi><mrow><msup><mi>p</mi><mo mathvariant="normal" lspace="0em" rspace="0em">&#x2032;</mo></msup><msup><mi>q</mi><mo mathvariant="normal" lspace="0em" rspace="0em">&#x2032;</mo></msup></mrow></mrow><annotation encoding="application/x-tex"> T\_{pq}^{2} = T\_{p&apos;q&apos;} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1241079999999999em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.061892em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span></span></span></span></span>.</p>
+<p>The completed procedure is </p>
+<pre><code class="lang-eval-scheme">(define (fib n)
+    (fib-iter 1 0 0 1 n))
+
+(define (fib-iter a b p q count)
+  (cond ((= count 0) 
+         b)
+        ((even? count)
+         (fib-iter a
+                   b
+                   (+ (* p p) (* q q))  ;compute p&apos;
+                   (+ (* 2 p 1) (* q q))  ;compute q&apos;
+                   (/ count 2)))
+        (else 
+         (fib-iter (+ (* b q) 
+                      (* a q) 
+                      (* a p))
+                   (+ (* b p) 
+                      (* a q))
+                   p
+                   q
+                   (- count 1)))))
+
+(fib 0)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 1)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 2)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 3)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 4)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 5)
+</code></pre>
+<pre><code class="lang-eval-scheme">(fib 6)
+</code></pre>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.18.html" class="navigation navigation-prev " aria-label="Previous page: 18">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.20.html" class="navigation navigation-next " aria-label="Next page: 20">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"19","level":"1.2.19","depth":2,"next":{"title":"20","level":"1.2.20","depth":2,"path":"1.-building-abstractions-with-procedures/1.20.md","ref":"1.-building-abstractions-with-procedures/1.20.md","articles":[]},"previous":{"title":"18","level":"1.2.18","depth":2,"path":"1.-building-abstractions-with-procedures/1.18.md","ref":"1.-building-abstractions-with-procedures/1.18.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"en_US","gitbook":"*"},"file":{"path":"1.-building-abstractions-with-procedures/1.19.md","mtime":"2022-06-15T11:32:51.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-15T11:33:35.139Z"},"basePath":"..","book":{"language":"en_US"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+        <div id="uniheart-footer"></div>
+        <script type="text/javascript">
+            window.addEventListener('load', function (){
+                console.log('gitbook=', gitbook);
+                gitbook.footer.init();
+            });
+        </script>
+    </body>
+</html>
+

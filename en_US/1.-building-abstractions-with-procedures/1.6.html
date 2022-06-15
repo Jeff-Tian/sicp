@@ -1,0 +1,676 @@
+
+<!DOCTYPE HTML>
+<html lang="en_US" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6 · SICP | 计算机程序的构造和解释</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    <link rel="stylesheet" href="../../gitbook/uniheart-rich-footer.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex2/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.7.html" />
+    
+    
+    <link rel="prev" href="1.5.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Building Abstractions With Procedures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1.html">
+            
+                <a href="1.1.html">
+            
+                    
+                    1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2.html">
+            
+                <a href="1.2.html">
+            
+                    
+                    2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3.html">
+            
+                <a href="1.3.html">
+            
+                    
+                    3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4.html">
+            
+                <a href="1.4.html">
+            
+                    
+                    4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5.html">
+            
+                <a href="1.5.html">
+            
+                    
+                    5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="1.6.html">
+            
+                <a href="1.6.html">
+            
+                    
+                    6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1.7.html">
+            
+                <a href="1.7.html">
+            
+                    
+                    7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8.html">
+            
+                <a href="1.8.html">
+            
+                    
+                    8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9.html">
+            
+                <a href="1.9.html">
+            
+                    
+                    9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10.html">
+            
+                <a href="1.10.html">
+            
+                    
+                    10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11.html">
+            
+                <a href="1.11.html">
+            
+                    
+                    11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="1.12.html">
+            
+                <a href="1.12.html">
+            
+                    
+                    12
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1.13.html">
+            
+                <a href="1.13.html">
+            
+                    
+                    13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1.14.html">
+            
+                <a href="1.14.html">
+            
+                    
+                    14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="1.15.html">
+            
+                <a href="1.15.html">
+            
+                    
+                    15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="1.16.html">
+            
+                <a href="1.16.html">
+            
+                    
+                    16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="1.17.html">
+            
+                <a href="1.17.html">
+            
+                    
+                    17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="1.18.html">
+            
+                <a href="1.18.html">
+            
+                    
+                    18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="1.19.html">
+            
+                <a href="1.19.html">
+            
+                    
+                    19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="1.20.html">
+            
+                <a href="1.20.html">
+            
+                    
+                    20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="1.21.html">
+            
+                <a href="1.21.html">
+            
+                    
+                    21
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="1.39.html">
+            
+                <a href="1.39.html">
+            
+                    
+                    39
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="1.40.html">
+            
+                <a href="1.40.html">
+            
+                    
+                    40
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="1.41.html">
+            
+                <a href="1.41.html">
+            
+                    
+                    41
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="1.42.html">
+            
+                <a href="1.42.html">
+            
+                    
+                    42
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="1.43.html">
+            
+                <a href="1.43.html">
+            
+                    
+                    43
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="1.44.html">
+            
+                <a href="1.44.html">
+            
+                    
+                    44
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="1.45.html">
+            
+                <a href="1.45.html">
+            
+                    
+                    45
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="1.46.html">
+            
+                <a href="1.46.html">
+            
+                    
+                    46
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://jeff-tian.jiwai.win" target="blank" class="gitbook-link">
+            Made by Jeff Tian
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="16">1.6</h1>
+<h2 id="exercise-16-alyssa-p-hacker-doesnt-see-why-if-needs-to-be-provided-as-a-special-form-why-cant-i-just-define-it-as-an-ordinary-procedure-in-terms-of-cond-she-asks-alyssas-friend-eva-lu-ator-claims-this-can-indeed-be-done-and-she-defines-a-new-version-of-if">Exercise 1.6: Alyssa P. Hacker doesn&#x2019;t see why <code>if</code> needs to be provided as a special form. &#x201C;Why can&#x2019;t I just define it as an ordinary procedure in terms of <code>cond</code>?&#x201D; she asks. Alyssa&#x2019;s friend Eva Lu Ator claims this can indeed be done, and she defines a new version of <code>if</code>:</h2>
+<pre><code class="lang-eval-scheme">(define (new-if predicate then-clause else-clause) (cond (predicate then-clause)
+(else else-clause)))
+</code></pre>
+<h2 id="eva-demonstrates-the-program-for-alyssa">Eva demonstrates the program for Alyssa:</h2>
+<pre><code class="lang-eval-scheme">(new-if (= 2 3) 0 5)
+</code></pre>
+<pre><code class="lang-eval-scheme">(new-if (= 1 1) 0 5)
+</code></pre>
+<h2 id="delighted-alyssa-uses-new-if-to-rewrite-the-square-root-program">Delighted, Alyssa uses <code>new-if</code> to rewrite the <code>square-root</code> program:</h2>
+<pre><code class="lang-eval-scheme">(define (sqrt-iter guess x) (new-if (good-enough? guess x)
+guess
+(sqrt-iter (improve guess x)
+x)))
+</code></pre>
+<h2 id="what-happens-when-alyssa-attempts-to-use-this-to-compute-square-roots-explain">What happens when Alyssa attempts to use this to compute square roots? Explain.</h2>
+<pre><code class="lang-eval-scheme">(define (improve guess x)
+       (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? guess x)
+(&lt; (abs (- (square guess) x)) 0.001))
+</code></pre>
+<pre><code class="lang-eval-scheme">(define (new-sqrt x)
+    (sqrt-iter 1.0 x)
+)
+</code></pre>
+<pre><code class="lang-text">(new-sqrt 9)
+</code></pre>
+<p>Timeout!</p>
+<p><a href="http://localhost:4000/chapter1/1.5.html#notice" target="_blank">Because Scheme Lisp is in applicative order</a>, so it evaluates all the parameters for the <code>new-if</code>; that makes <code>sqrt-iter</code> execute in whether cases, which cause infinite loop in consequences.</p>
+<p>But the special form <code>if</code> will make sure the recursive happens only the predicate is not met.</p>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.5.html" class="navigation navigation-prev " aria-label="Previous page: 5">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.7.html" class="navigation navigation-next " aria-label="Next page: 7">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6","level":"1.2.6","depth":2,"next":{"title":"7","level":"1.2.7","depth":2,"path":"1.-building-abstractions-with-procedures/1.7.md","ref":"1.-building-abstractions-with-procedures/1.7.md","articles":[]},"previous":{"title":"5","level":"1.2.5","depth":2,"path":"1.-building-abstractions-with-procedures/1.5.md","ref":"1.-building-abstractions-with-procedures/1.5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"en_US","gitbook":"*"},"file":{"path":"1.-building-abstractions-with-procedures/1.6.md","mtime":"2022-06-15T11:32:51.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-15T11:33:35.139Z"},"basePath":"..","book":{"language":"en_US"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+        <div id="uniheart-footer"></div>
+        <script type="text/javascript">
+            window.addEventListener('load', function (){
+                console.log('gitbook=', gitbook);
+                gitbook.footer.init();
+            });
+        </script>
+    </body>
+</html>
+

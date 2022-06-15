@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  pull_request:
+    types: [open, synchronize]
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '12.16.2'
+      - run: npm i -g yarn
+      - run: yarn
+      - run: yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _book

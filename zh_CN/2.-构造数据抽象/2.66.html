@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.49 · SICP | 计算机程序的构造和解释</title>
+        <title>2.66 · SICP | 计算机程序的构造和解释</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2.50.html" />
     
-    
-    <link rel="prev" href="2.48.html" />
+    <link rel="prev" href="2.65.html" />
     
 
     </head>
@@ -1050,7 +1048,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.49" data-path="2.49.html">
+        <li class="chapter " data-level="1.3.49" data-path="2.49.html">
             
                 <a href="2.49.html">
             
@@ -1271,7 +1269,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.66" data-path="2.66.html">
+        <li class="chapter active" data-level="1.3.66" data-path="2.66.html">
             
                 <a href="2.66.html">
             
@@ -1319,7 +1317,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.49</a>
+        <a href=".." >2.66</a>
     </h1>
 </div>
 
@@ -1334,251 +1332,119 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="249">2.49</h1>
-<h2 id="&#x7EC3;&#x4E60;-249-&#x5229;&#x7528;segments-painter&#x5B9A;&#x4E49;&#x4E0B;&#x9762;&#x7684;&#x57FA;&#x672C;&#x753B;&#x5BB6;&#xFF1A;">&#x7EC3;&#x4E60; 2.49 &#x5229;&#x7528;segments-&gt;painter&#x5B9A;&#x4E49;&#x4E0B;&#x9762;&#x7684;&#x57FA;&#x672C;&#x753B;&#x5BB6;&#xFF1A;</h2>
-<p>a) &#x753B;&#x51FA;&#x7ED9;&#x5B9A;&#x6846;&#x67B6;&#x8FB9;&#x754C;&#x7684;&#x753B;&#x5BB6;</p>
-<p>b) &#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x6846;&#x67B6;&#x4E24;&#x5BF9;&#x89D2;&#x753B;&#x51FA;&#x4E00;&#x4E2A;&#x5927;&#x53C9;&#x5B50;&#x7684;&#x753B;&#x5BB6;&#x3002;</p>
-<p>c) &#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x6846;&#x67B6;&#x5404;&#x8FB9;&#x7684;&#x4E2D;&#x5FC3;&#x753B;&#x51FA;&#x4E00;&#x4E2A;&#x83F1;&#x5F62;&#x7684;&#x753B;&#x5BB6;&#x3002;</p>
-<p>d) &#x753B;&#x5BB6; wave&#x3002;</p>
+                                <h1 id="266">2.66</h1>
+<h2 id="&#x7EC3;&#x4E60;-266-&#x5047;&#x8BBE;&#x8BB0;&#x5F55;&#x7684;&#x96C6;&#x5408;&#x91C7;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x5B9E;&#x73B0;&#xFF0C;&#x6309;&#x7167;&#x5176;&#x4E2D;&#x4F5C;&#x4E3A;&#x952E;&#x503C;&#x7684;&#x6570;&#x503C;&#x6392;&#x5E8F;&#x3002;&#x8BF7;&#x5B9E;&#x73B0;&#x76F8;&#x5E94;&#x7684;-lookup-&#x8FC7;&#x7A0B;&#x3002;">&#x7EC3;&#x4E60; 2.66 &#x5047;&#x8BBE;&#x8BB0;&#x5F55;&#x7684;&#x96C6;&#x5408;&#x91C7;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x5B9E;&#x73B0;&#xFF0C;&#x6309;&#x7167;&#x5176;&#x4E2D;&#x4F5C;&#x4E3A;&#x952E;&#x503C;&#x7684;&#x6570;&#x503C;&#x6392;&#x5E8F;&#x3002;&#x8BF7;&#x5B9E;&#x73B0;&#x76F8;&#x5E94;&#x7684; lookup &#x8FC7;&#x7A0B;&#x3002;</h2>
 <hr>
-<h3 id="a">a)</h3>
-<p>&#x5148;&#x7528; js &#x6765;&#x76F4;&#x89C2;&#x5730;&#x4F53;&#x9A8C;&#x4E00;&#x4E0B;&#xFF0C;&#x540E;&#x9762;&#x518D;&#x5C06; js &#x5B9E;&#x73B0;&#x7FFB;&#x8BD1;&#x6210; scheme&#x3002;</p>
-<p>&#x5148;&#x4F7F;&#x7528; js &#x5B9A;&#x4E49;&#x4E00;&#x4E0B; segment &#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x76F8;&#x5E94;&#x7684;&#x9009;&#x62E9;&#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-eval-js">cons = (x, y) =&gt; [x, y];
-car = (z) =&gt; z[0];
-cdr = (z) =&gt; z[1];
+<p>&#x5148;&#x590D;&#x7528;&#x4E00;&#x4E0B;&#x524D;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-eval-scheme">(define entry car)
+(define left-branch cadr)
+(define right-branch caddr)
 
-makeVect = cons;
-xCorVect = car;
-yCorVect = cdr;
-
-makeSegment = cons;
-startSegment = car;
-endSegment = cdr;
-
-o = makeVect(0, 0);
-e1 = makeVect(300, 0);
-e2 = makeVect(0, 150); 
-
-s = makeSegment(makeVect(1, 0), makeVect(0, 1)); 
-console.log(&apos;s = &apos;, s);
-
-console.log(startSegment(s));
-console.log(endSegment(s));
+(define (quotient n m) 
+    (floor (/ n m))
+)
 </code></pre>
-<p>&#x63A5;&#x7740;&#xFF0C;&#x5B9A;&#x4E49; frame&#xFF1A;</p>
-<pre><code class="lang-eval-js">makeFrame = (origin, edge1, edge2) =&gt; {
-    return [origin, edge1, edge2];
-};
+<pre><code class="lang-eval-scheme">(define (make-tree entry left right)
+    (list entry left right)
+)
+</code></pre>
+<pre><code class="lang-eval-scheme">(define (list-&gt;tree elements)
+    (car 
+        (partial-tree 
+            elements 
+            (length elements)
+        )
+    )
+)
 
-originFrame = (frame) =&gt; frame[0];
-edge1Frame = (frame) =&gt; frame[1];
-edge2Frame = (frame) =&gt; frame[2];
-
-addVect = (v1, v2) =&gt; makeVect(xCorVect(v1) + xCorVect(v2), yCorVect(v1) + yCorVect(v2));
-scaleVect = (s, v) =&gt; makeVect(s * xCorVect(v), s * yCorVect(v));
-
-frameCoordMap = (frame) =&gt; {
-    return (v) =&gt; {
-        return addVect(
-            originFrame(frame),
-            addVect(
-                scaleVect(
-                    xCorVect(v),
-                    edge1Frame(frame)
-                ),
-                scaleVect(
-                    yCorVect(v),
-                    edge2Frame(frame)
+(define (partial-tree elts n)
+    (if (= n 0)
+        (cons &apos;() elts)
+        (let 
+            (
+                (left-size 
+                    (quotient (- n 1) 2)
                 )
             )
-        );
-    };
-}
+            (let ((left-result (partial-tree elts left-size)))
+                (let 
+                    (
+                        (left-tree (car left-result))
+                        (non-left-elts (cdr left-result))
+                        (right-size (- n (+ left-size 1)))
+                    )
 
-f = makeFrame(o, e1, e2);
-const m = frameCoordMap(f);
-console.log(&apos;start = &apos;, m(startSegment(s)));  
-console.log(&apos;end = &apos;, m(endSegment(s)));
-</code></pre>
-<p>&#x7136;&#x540E;&#xFF0C;&#x5B9A;&#x4E49; segmentsPainter&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x4E00;&#x4E2A; segmentsPainter &#x5B9E;&#x4F8B;&#x770B;&#x770B;&#xFF1A;</p>
-<canvas id="a-segments"></canvas>
+                    (let 
+                        (
+                            (this-entry (car non-left-elts))
+                            (right-result 
+                                (partial-tree 
+                                    (cdr non-left-elts) 
+                                    right-size
+                                )
+                            )
+                        )
 
-<pre><code class="lang-eval-js">drawLine = (v1, v2) =&gt; {
-    return (ctx) =&gt; {
-        ctx.beginPath();
-        ctx.moveTo(xCorVect(v1), yCorVect(v1));
-        ctx.lineTo(xCorVect(v2), yCorVect(v2));
-        ctx.stroke();
-    }
-};
+                        (let 
+                            (
+                                (right-tree (car right-result))
+                                (remaining-elts
+                                    (cdr right-result)
+                                )
+                            )
 
-segmentsPainter = (segmentList) =&gt; {
-    return (frame) =&gt; (ctx) =&gt; {
-        segmentList.forEach((segment) =&gt; {
-            drawLine(
-                (frameCoordMap(frame))(startSegment(segment)),
-                (frameCoordMap(frame))(endSegment(segment))
-            )(ctx);
-        });
-    }
-}
-
-applyToCanvas = (painter, canvasSelector) =&gt; {
-    const canvas = document.querySelector(canvasSelector);
-    const ctx = canvas.getContext(&apos;2d&apos;);
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
-
-    painter(ctx);
-}
-
-const s2 = makeSegment(
-    makeVect(0, 0),
-    makeVect(1, 1)
-);
-
-applyToCanvas(segmentsPainter([s, s2])(f), &apos;#a-segments&apos;);
-</code></pre>
-<p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x753B;&#x51FA;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x8FB9;&#x754C;&#xFF1A;</p>
-<canvas id="a-border"></canvas>
-
-<pre><code class="lang-eval-js">framePainter = frame =&gt; {
-    const corner1 = makeVect(0, 0);
-    const corner2 = makeVect(1, 0);
-    const corner3 = makeVect(1, 1);
-    const corner4 = makeVect(0, 1); 
-
-    return segmentsPainter([
-        makeSegment(corner1, corner2),
-        makeSegment(corner2, corner3),
-        makeSegment(corner3, corner4),
-        makeSegment(corner4, corner1)
-    ])(frame); 
-};
-
-applyToCanvas(framePainter(f), &apos;#a-border&apos;);
-</code></pre>
-<p>&#x73B0;&#x5728;&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x753B;&#x51FA;&#x6846;&#x67B6;&#x7684;&#x753B;&#x5BB6;&#xFF0C;&#x7FFB;&#x8BD1;&#x6210; scheme&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define (frame-&gt;painter frame)
-    ((segments-&gt;painter
-        (list
-            (make-segment (make-vect 0 0) (make-vect 1 0))
-            (make-segment (make-vect 1 0) (make-vect 1 1))
-            (make-segment (make-vect 1 1) (make-vect 0 1))
-            (make-segment (make-vect 0 1) (make-vect 0 0))
+                            (cons 
+                                (make-tree this-entry left-tree right-tree)
+                                remaining-elts
+                            )
+                        )
+                    )
+                )
+            )
         )
-    ) frame)
+    )
 )
-</code></pre>
-<h3 id="b">b)</h3>
-<canvas id="fork-canvas"></canvas>
 
-<pre><code class="lang-eval-js">const forkPainter = (frame) =&gt; {
-    const corner1 = makeVect(0, 0);
-    const corner2 = makeVect(1, 0);
-    const corner3 = makeVect(1, 1);
-    const corner4 = makeVect(0, 1); 
-
-    const s1 = makeSegment(corner1, corner3);
-    const s2 = makeSegment(corner2, corner4);
-
-    return segmentsPainter([s1, s2])(frame); 
-};
-
-applyToCanvas(forkPainter(f), &apos;#fork-canvas&apos;);
-</code></pre>
-<p>&#x5C06;&#x5927;&#x53C9;&#x5B50;&#x753B;&#x5BB6;&#x7FFB;&#x8BD1;&#x6210; Scheme&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define (fork-painter frame) 
-    ((segments-painter 
-        (list
-            (make-segment (make-vect 0 0) (make-vect 1 1))
-            (make-segment (make-vect 0 1) (make-vect 1 0))
+(define (tree-&gt;list tree)
+    (if (null? tree)
+        &apos;()
+        (append 
+            (tree-&gt;list (left-branch tree))
+            (cons 
+                (entry tree)
+                (tree-&gt;list (right-branch tree))
+            )
         )
-    ) frame)
+    )
 )
-</code></pre>
-<h3 id="c">c</h3>
-<canvas id="diamond-canvas"></canvas>
 
-<pre><code class="lang-eval-js">diamondPainter = (frame) =&gt; {
-    const vTop = makeVect(0.5, 0);
-    const vRight = makeVect(1, 0.5);
-    const vBottom = makeVect(0.5, 1);
-    const vLeft = makeVect(0, 0.5);
+(define (lookup given-key set-of-records)
+    (cond 
+        (
+            (null? set-of-records)
+            false
+        )
 
-    const s1 = makeSegment(vTop, vRight);
-    const s2 = makeSegment(vRight, vBottom);
-    const s3 = makeSegment(vBottom, vLeft);
-    const s4 = makeSegment(vLeft, vTop); 
+        (
+            (equal? given-key (key (entry set-of-records)))
+            (entry set-of-records)
+        )
 
-    return segmentsPainter([s1, s2, s3, s4])(frame); 
-};
+        (
+            (less-than? given-key (key (entry set-of-records)))
+            (lookup given-key (left-branch set-of-records))
+        )
 
-applyToCanvas(diamondPainter(f), &apos;#diamond-canvas&apos;);
-</code></pre>
-<p>&#x5C06;&#x4EE5;&#x4E0A; js &#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x6210; Scheme &#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define (diamond-&gt;painter frame) 
-    ((segments-&gt;painter
-        (make-segment (make-vect 0.5 0) (make-vect 1 0.5))
-        (make-segment (make-vect 1 0.5) (make-vect 0.5 1))
-        (make-segment (make-vect 0.5 1) (make-vect 0 0.5))
-        (make-segment (make-vect 0 0.5) (make-vect 0.5 0))
-    ) frame)
+        (
+            else
+            (lookup given-key (right-branch set-of-records))
+        )
+    )
 )
-</code></pre>
-<h3 id="d">d</h3>
-<p>wave &#x7684;&#x70B9;&#x7EBF;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x4E3A;&#x4E86;&#x753B;&#x51FA;&#x6765;&#xFF0C;&#x5148;&#x6807;&#x8BB0;&#x4E00;&#x4E0B;&#x6240;&#x6709;&#x7684;&#x70B9;&#xFF0C;&#x4E00;&#x5171;&#x662F;22&#x4E2A;&#x3002;&#x518D;&#x8FDE;&#x70B9;&#x6210;&#x7EBF;&#x5373;&#x53EF;&#x3002;</p>
-<p><img src="2.49/wave.jpg" alt=""></p>
-<p>Scheme &#x7701;&#x7565;&#xFF0C;&#x6CA1;&#x6709;&#x65B0;&#x9C9C;&#x4E1C;&#x897F;&#xFF0C;&#x53EA;&#x662F;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x800C;&#x5DF2;&#x3002;</p>
-<canvas id="wave-canvas"></canvas>
 
-<pre><code class="lang-eval-js">wavePainter = (frame) =&gt; {
-    const v1 = makeVect(0.4, 0);
-    const v2 = makeVect(0.6, 0);
-    const v3 = makeVect(0, 0.2);
-    const v4 = makeVect(0.3, 0.2);
-    const v5 = makeVect(0.7, 0.2);
-    const v6 = makeVect(0, 0.4);
-    const v7 = makeVect(0.2, 0.4);
-    const v8 = makeVect(0.3, 0.35);
-    const v9 = makeVect(0.42, 0.4);
-    const v10 = makeVect(0.6, 0.4);
-    const v11 = makeVect(0.8, 0.4);
-    const v12 = makeVect(0.3, 0.4);
-    const v13 = makeVect(0.2, 0.55);
-    const v14 = makeVect(0.31, 0.5);
-    const v15 = makeVect(0.6, 0.51);
-    const v16 = makeVect(1, 0.7);
-    const v17 = makeVect(0.5, 0.8);
-    const v18 = makeVect(1, 0.85);
-    const v19 = makeVect(0.35, 1);
-    const v20 = makeVect(0.4, 1);
-    const v21 = makeVect(0.6, 1);
-    const v22 = makeVect(0.7, 1);
+(define (key record) record)
 
-    return segmentsPainter([
-        makeSegment(v1, v4),
-        makeSegment(v2, v5),
-        makeSegment(v3, v7), 
-        makeSegment(v7, v8),
-        makeSegment(v8, v9),
-        makeSegment(v9, v4),
-        makeSegment(v10, v5),
-        makeSegment(v10, v11),
-        makeSegment(v6, v13),
-        makeSegment(v13, v12),
-        makeSegment(v12, v14),
-        makeSegment(v16, v11),
-        makeSegment(v18, v15),
-        makeSegment(v19, v14),
-        makeSegment(v20, v17),
-        makeSegment(v21, v17),
-        makeSegment(v22, v15),
-    ])(frame); 
-}
-
-applyToCanvas(wavePainter(f), &apos;#wave-canvas&apos;);
+(lookup 5 (list-&gt;tree (list 1 2 3 4 5 6 7 8 9 10)))
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
@@ -1607,14 +1473,10 @@ applyToCanvas(wavePainter(f), &apos;#wave-canvas&apos;);
 
             
                 
-                <a href="2.48.html" class="navigation navigation-prev " aria-label="Previous page: 2.48">
+                <a href="2.65.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.65">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2.50.html" class="navigation navigation-next " aria-label="Next page: 2.50">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1623,7 +1485,7 @@ applyToCanvas(wavePainter(f), &apos;#wave-canvas&apos;);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.49","level":"1.3.49","depth":2,"next":{"title":"2.50","level":"1.3.50","depth":2,"path":"2.-构造数据抽象/2.50.md","ref":"2.-构造数据抽象/2.50.md","articles":[]},"previous":{"title":"2.48","level":"1.3.48","depth":2,"path":"2.-构造数据抽象/2.48.md","ref":"2.-构造数据抽象/2.48.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.49.md","mtime":"2022-06-19T03:55:38.546Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-19T03:56:23.965Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.66","level":"1.3.66","depth":2,"previous":{"title":"2.65","level":"1.3.65","depth":2,"path":"2.-构造数据抽象/2.65.md","ref":"2.-构造数据抽象/2.65.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.66.md","mtime":"2022-06-19T03:55:38.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-19T03:56:23.965Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

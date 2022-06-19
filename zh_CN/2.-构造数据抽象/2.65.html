@@ -1405,8 +1405,77 @@
     )
 )
 </code></pre>
+<p>&#x6309;&#x7167;&#x524D;&#x9762;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x8868;&#x53D8;&#x6210;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x8FD8;&#x8981;&#x662F;&#x5E73;&#x8861;&#x7684;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x8FD9;&#x4E2A;&#x8868;&#x5F97;&#x6709;&#x5E8F;&#x3002;&#x4F46;&#x662F;&#x5728;&#x6709;&#x5E8F;&#x8868;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x398;</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Theta(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x398;</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> &#x7684;union-set &#xFF08;<a href="2.62">&#x7EC3;&#x4E60;2.62</a>&#xFF09;&#x3002;</p>
+<pre><code class="lang-eval-scheme">(define (union-set-sorted-list set1 set2)
+  (cond
+   ((null? set1) set2)
+   ((null? set2) set1)
+   (
+    (&lt; (car set1) (car set2))
+    (cons 
+     (car set1)
+     (union-set-sorted-list (cdr set1) set2)
+     ) 
+    )
+   (
+    (= (car set1) (car set2))
+    (union-set-sorted-list (cdr set1) set2)
+    )
+   (
+    else
+    (cons
+     (car set2)
+     (union-set-sorted-list set1 (cdr set2))
+     )
+    )
+   ) 
+  )
+
+(union-set-sorted-list (list 1 2 3 4) (list 5 6 7 8))
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x5F88;&#x81EA;&#x7136;&#x5730;&#x60F3;&#x5230;&#xFF0C;&#x5229;&#x7528; 2.62 &#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5C06;&#x4E24;&#x68F5;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;&#x8F6C;&#x6362;&#x6210;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5728;&#x5B8C;&#x6210;&#x5408;&#x5E76;&#x540E;&#xFF0C;&#x518D;&#x8F6C;&#x6362;&#x56DE;&#x6210;&#x6811;&#xFF08;&#x7531;&#x4E8E;&#x7ED3;&#x679C;&#x8868;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x8F6C;&#x6362;&#x56DE;&#x6210;&#x6811;&#x4ECD;&#x7136;&#x662F;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;&#xFF09;&#x3002;</p>
 <h3 id="union-set">union-set</h3>
+<pre><code class="lang-eval-scheme">(define (union-set tree1 tree2)
+    (list-&gt;tree
+        (union-set-sorted-list (tree-&gt;list tree1) (tree-&gt;list tree2))
+    )
+)
+
+(union-set 
+    (list-&gt;tree (list 1 2 3 4))
+    (list-&gt;tree (list 5 6 7 8))
+)
+</code></pre>
 <h3 id="intersection-set">intersection-set</h3>
+<pre><code class="lang-eval-scheme">(define (intersection-set-sorted-list list1 list2)
+    (if (or (null? list1) (null? list2))
+        &apos;()
+        (if (= (car list1) (car list2))
+            (cons 
+                (car list1) 
+                (intersection-set-sorted-list (cdr list1) (cdr list2))
+            )
+            (if (&lt; (car list1) (car list2))
+                (intersection-set-sorted-list (cdr list1) list2)
+                (intersection-set-sorted-list list1 (cdr list2))
+            )
+        )
+    )
+)
+
+(intersection-set-sorted-list (list 1 2 3 4) (list 4 5 6 7))
+</code></pre>
+<pre><code class="lang-eval-scheme">(define (intersection-set tree1 tree2)
+    (list-&gt;tree
+        (intersection-set-sorted-list 
+            (tree-&gt;list tree1)
+            (tree-&gt;list tree2)
+        )
+    )
+)
+
+(intersection-set (list-&gt;tree (list 1 2 3 4 5)) (list-&gt;tree (list 4 5 6 7 8)))
+</code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -1446,7 +1515,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.65","level":"1.3.65","depth":2,"previous":{"title":"2.64","level":"1.3.64","depth":2,"path":"2.-构造数据抽象/2.64.md","ref":"2.-构造数据抽象/2.64.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.65.md","mtime":"2022-06-16T01:46:48.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-16T01:47:28.710Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.65","level":"1.3.65","depth":2,"previous":{"title":"2.64","level":"1.3.64","depth":2,"path":"2.-构造数据抽象/2.64.md","ref":"2.-构造数据抽象/2.64.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.65.md","mtime":"2022-06-19T03:31:44.535Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-19T03:32:24.053Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

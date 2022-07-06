@@ -863,10 +863,10 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-eason-parser@1.8.8:
-  version "1.8.8"
-  resolved "https://registry.yarnpkg.com/eason-parser/-/eason-parser-1.8.8.tgz#ff554c6f671ea57dc3a8a5371a87a2e2ead51389"
-  integrity sha512-MDjkMkYuYSJlSd4CPQZY+m450xAXEJcn4oz33QeSgNCGaTssQFFZa8S5LSxzCwhw1+NZvgK0BRAVHxG4wn4mmQ==
+eason-parser@1.8.9:
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/eason-parser/-/eason-parser-1.8.9.tgz#69c8b3061609fec54438e2aede8844129eff34b4"
+  integrity sha512-bkXrHDV2jg/umi/HHNg7ynB5Eb7OcEHwfqBuOxPmzfmFaZcKv4dB/muEtW5pqWUw4/0vILQRAeIkpBtvCjmhgQ==
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -1254,12 +1254,12 @@ gitbook-cli@2.3.2:
     tmp "0.0.31"
     user-home "2.0.0"
 
-gitbook-plugin-eason-parser@^1.8.8:
-  version "1.8.8"
-  resolved "https://registry.yarnpkg.com/gitbook-plugin-eason-parser/-/gitbook-plugin-eason-parser-1.8.8.tgz#5182685f20926ccc627d03ee370a1d3412356c1b"
-  integrity sha512-EdU5+SLpMmUYyCF319LQua3Ah5Q60Nzg93A4+Xn7DCYsuUxddMlLQ0nJmfW+MtL8m1siqcWKu/1Ra4hoS27Htw==
+gitbook-plugin-eason-parser@^1.8.9:
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/gitbook-plugin-eason-parser/-/gitbook-plugin-eason-parser-1.8.9.tgz#bf45647e6582a6da5294b20963b7479509e0ac2e"
+  integrity sha512-RkO1U0BzZ69wUwUhELucZ405UTlNpQZH3LAs8w/fmCkIsjFg5MWZQ/wLwydCSXQkeM7IwzgN3UKhBSXRgCd50Q==
   dependencies:
-    eason-parser "1.8.8"
+    eason-parser "1.8.9"
 
 gitbook-plugin-github@^2.0.0:
   version "2.0.0"

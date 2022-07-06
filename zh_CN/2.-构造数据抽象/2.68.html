@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.10 · SICP | 计算机程序的构造和解释</title>
+        <title>2.68 · SICP | 计算机程序的构造和解释</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2.11.html" />
     
-    
-    <link rel="prev" href="2.9.html" />
+    <link rel="prev" href="2.67.html" />
     
 
     </head>
@@ -543,7 +541,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.10" data-path="2.10.html">
+        <li class="chapter " data-level="1.3.10" data-path="2.10.html">
             
                 <a href="2.10.html">
             
@@ -1297,7 +1295,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.68" data-path="2.68.html">
+        <li class="chapter active" data-level="1.3.68" data-path="2.68.html">
             
                 <a href="2.68.html">
             
@@ -1345,7 +1343,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.10</a>
+        <a href=".." >2.68</a>
     </h1>
 </div>
 
@@ -1360,56 +1358,176 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="210">2.10</h1>
-<h2 id="&#x7EC3;&#x4E60;-210-ben-bitdiddle-&#x662F;&#x4E2A;&#x4E13;&#x4E1A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4ED6;&#x770B;&#x4E86;-alyssa-&#x5DE5;&#x4F5C;&#x540E;&#x8BC4;&#x8BBA;&#x8BF4;&#xFF0C;&#x9664;&#x4EE5;&#x4E00;&#x4E2A;&#x8DE8;&#x8FC7;&#x6A2A;&#x8DE8;0&#x7684;&#x533A;&#x95F4;&#x7684;&#x610F;&#x4E49;&#x4E0D;&#x6E05;&#x695A;&#x3002;&#x8BF7;&#x4FEE;&#x6539;-alyssa-&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x68C0;&#x67E5;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5E76;&#x5728;&#x51FA;&#x73B0;&#x8FD9;&#x4E00;&#x9519;&#x8BEF;&#x65F6;&#x62A5;&#x9519;&#x3002;">&#x7EC3;&#x4E60; 2.10 Ben Bitdiddle &#x662F;&#x4E2A;&#x4E13;&#x4E1A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4ED6;&#x770B;&#x4E86; Alyssa &#x5DE5;&#x4F5C;&#x540E;&#x8BC4;&#x8BBA;&#x8BF4;&#xFF0C;&#x9664;&#x4EE5;&#x4E00;&#x4E2A;&#x8DE8;&#x8FC7;&#x6A2A;&#x8DE8;0&#x7684;&#x533A;&#x95F4;&#x7684;&#x610F;&#x4E49;&#x4E0D;&#x6E05;&#x695A;&#x3002;&#x8BF7;&#x4FEE;&#x6539; Alyssa &#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x68C0;&#x67E5;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5E76;&#x5728;&#x51FA;&#x73B0;&#x8FD9;&#x4E00;&#x9519;&#x8BEF;&#x65F6;&#x62A5;&#x9519;&#x3002;</h2>
+                                <h1 id="268">2.68</h1>
+<h2 id="&#x7EC3;&#x4E60;-268-&#x8FC7;&#x7A0B;encode&#x4EE5;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x548C;&#x4E00;&#x68F5;&#x6811;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4EA7;&#x751F;&#x51FA;&#x88AB;&#x7F16;&#x7801;&#x6D88;&#x606F;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x5BF8;&#x8FDB;&#x5236;&#x4F4D;&#x7684;&#x8868;&#xFF1A;">&#x7EC3;&#x4E60; 2.68 &#x8FC7;&#x7A0B;encode&#x4EE5;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x548C;&#x4E00;&#x68F5;&#x6811;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4EA7;&#x751F;&#x51FA;&#x88AB;&#x7F16;&#x7801;&#x6D88;&#x606F;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x5BF8;&#x8FDB;&#x5236;&#x4F4D;&#x7684;&#x8868;&#xFF1A;</h2>
+<pre><code class="lang-eval-scheme">(define (encode message tree)
+    (if (null? message)
+        &apos;()
+        (append 
+            (encode-symbol (car message) tree)
+            (encode (cdr message) tree)
+        )
+    )
+)
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x7684;encode-symbol&#x662F;&#x9700;&#x8981;&#x4F60;&#x5199;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B83;&#x80FD;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x6811;&#x4EA7;&#x751F;&#x51FA;&#x7ED9;&#x5B9A;&#x7B26;&#x53F7;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x8868;&#x3002;&#x4F60;&#x6240;&#x8BBE;&#x8BA1;&#x7684;encode-symbol&#x5728;&#x9047;&#x5230;&#x672A;&#x51FA;&#x73B0;&#x5728;&#x6811;&#x4E2D;&#x7684;&#x7B26;&#x53F7;&#x65F6;&#x5E94;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#x3002;&#x8BF7;&#x7528;&#x5728;&#x7EC3;&#x4E60;2.67&#x4E2D;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x68C0;&#x67E5;&#x6240;&#x5B9E;&#x73B0;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5DE5;&#x4F5C;&#x4E2D;&#x7528;&#x540C;&#x6837;&#x4E00;&#x68F5;&#x6811;&#xFF0C;&#x770B;&#x770B;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x662F;&#x539F;&#x6765;&#x90A3;&#x4E2A;&#x6D88;&#x606F;&#x3002;</p>
 <hr>
-<pre><code class="lang-eval-scheme">(define (make-interval a b) (cons a b))
-(define upper-bound cdr)
-(define lower-bound car)
-(define (add-interval x y) 
-    (make-interval (+ (lower-bound x) (lower-bound y))
-                    (+ (upper-bound x) (upper-bound y))))
-(define (sub-interval x y) (add-interval x (make-interval (- 0 (upper-bound y)) (- 0 (lower-bound y)))))
-(define (subtract-interval x y)
-    (define p1 (- (lower-bound x) (lower-bound y)))
-    (define p2 (- (lower-bound x) (upper-bound y)))
-    (define p3 (- (upper-bound x) (lower-bound y)))
-    (define p4 (- (upper-bound x) (upper-bound y)))
+<pre><code class="lang-eval-scheme">(define (encode-symbol char tree)
+    (let 
+        (
+            (left (left-branch tree))
+            (right (right-branch tree))
+        )
+        (if (leaf? left) 
+            (if (eq? (symbol-leaf left) char) 
+                (list &apos;0)
+                (if (leaf? right)
+                    (if (eq? (symbol-leaf right) char)
+                        (list &apos;1)
+                        &apos;error-not-found-in-tree
+                    )
+                    (let
+                        (
+                            (right-res (encode-symbol char right))
+                        )
+                        (if 
+                            (eq? 
+                                right-res 
+                                &apos;error-not-found-in-tree
+                            )
+                            &apos;error-not-found-in-tree
+                            (append (list &apos;1) (encode-symbol char right))
+                        )
+                    )
+                )
+            )
+            (
+                (let 
+                    (
+                        (left-res (encode-symbol char left))
+                    )
+                    (if (eq? (left-res &apos;error-not-found-in-tree))
+                        (encode-symbol char right)
+                        left-res
+                    )
+                )
+            )
+        )
+    )
+)
+</code></pre>
+<p>decode &#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-eval-scheme">(define (decode bits tree)
+    (define (decode-1 bits current-branch)
+        (if (null? bits)
+            &apos;()
+            (let 
+                (
+                    (next-branch
+                        (choose-branch 
+                            (car bits)
+                            current-branch
+                        )
+                    )
+                )
 
-    (make-interval (min p1 p2 p3 p4) (max p1 p2 p3 p4)))
+                (if (leaf? next-branch)
+                    (cons 
+                        (symbol-leaf next-branch) 
+                        (decode-1 (cdr bits) tree)
+                    )
+                    (decode-1 (cdr bits) next-branch)
+                )
+            )
+        )
+    )
 
-(define (mul-interval x y)
-    (define p1 (* (lower-bound x) (lower-bound y)))
-    (define p2 (* (lower-bound x) (upper-bound y)))
-    (define p3 (* (upper-bound x) (lower-bound y)))
-    (define p4 (* (upper-bound x) (upper-bound y)))
-
-    (make-interval (min p1 p2 p3 p4) (max p1 p2 p3 p4))
+    (decode-1 bits tree)
 )
 
-(define (width x) (/ (- (upper-bound x) (lower-bound x)) 2))
-(define int1 (make-interval 1 2))
-(define int2 (make-interval 1 2))
+(define (left-branch tree) (car tree))
+(define (right-branch tree) (cadr tree))
 
-(define (div-interval x y)
-    (if (&lt;= (* (lower-bound y) (upper-bound y)) 0) &quot;Not allowed!&quot;
-    (mul-interval x
-                (make-interval (/ 1.0 (upper-bound y))
-                                (/ 1.0 (lower-bound y))))))
+(define (choose-branch bit branch)
+    (cond 
+        ((= bit 0) (left-branch branch))
+        ((= bit 1) (right-branch branch))
+        (else
+            (error &quot;bad bit -- CHOOSE-BRANCH&quot; bit)
+        )
+    )
+)
+
+(define (make-leaf symbol weight)
+    (list &apos;leaf symbol weight)
+)
+
+(define (leaf? object) (eq? (car object) &apos;leaf))
+
+(define (symbol-leaf x) (cadr x))
+(define (weight-leaf x) (caddr x))
 
 
-(define x (make-interval 2 4))
-(define y (make-interval 1 2))
-(define z (make-interval -1 1))
+(define (make-code-tree left right)
+    (list 
+        left
+        right
+        (append (symbols left) (symbols right))
+        (+ (weight left) (weight right))
+    )
+)
 
-(div-interval x y)
+(define (symbols tree)
+    (if (leaf? tree)
+    (list (symbol-leaf tree))
+    (caddr tree))
+)
+
+(define (weight tree)
+    (if 
+        (leaf? tree)
+        (weight-leaf tree)
+        (cadddr tree)
+    )
+)
+
+(define sample-tree
+    (make-code-tree 
+        (make-leaf &apos;A 4)
+        (make-code-tree 
+            (make-leaf &apos;B 2)
+            (make-code-tree
+                (make-leaf &apos;D 1)
+                (make-leaf &apos;C 1)
+            )
+        )
+    )
+)
+
+(define sample-message &apos;(0 1 1 0 0 1 0 1 0 1 1 1 0))
+
+(decode sample-message sample-tree)
 </code></pre>
-<pre><code class="lang-eval-scheme">(div-interval x z)
+<pre><code class="lang-eval-scheme">
+(define sample-tree
+    (make-code-tree 
+        (make-leaf &apos;A 4)
+        (make-code-tree 
+            (make-leaf &apos;B 2)
+            (make-code-tree
+                (make-leaf &apos;D 1)
+                (make-leaf &apos;C 1)
+            )
+        )
+    )
+)
+
+
+(encode-symbol &apos;A sample-tree)
 </code></pre>
-<h2 id="javascript-&#x7248;&#x672C;&#x7684;&#x533A;&#x95F4;&#x7B97;&#x672F;">JavaScript &#x7248;&#x672C;&#x7684;&#x533A;&#x95F4;&#x7B97;&#x672F;</h2>
-<ul>
-<li><a href="https://github.com/Jeff-Tian/JavaScriptIntervalArithmetic" target="_blank">https://github.com/Jeff-Tian/JavaScriptIntervalArithmetic</a></li>
-</ul>
+<pre><code class="lang-eval-scheme">(encode (list &apos;A &apos;D &apos;A &apos;B &apos;B &apos;C &apos;A) sample-tree)
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x548C; sample-message &#x4E00;&#x81F4;&#xFF01;</p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -1437,14 +1555,10 @@
 
             
                 
-                <a href="2.9.html" class="navigation navigation-prev " aria-label="Previous page: 2.9">
+                <a href="2.67.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.67">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2.11.html" class="navigation navigation-next " aria-label="Next page: 2.11">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1453,7 +1567,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.10","level":"1.3.10","depth":2,"next":{"title":"2.11","level":"1.3.11","depth":2,"path":"2.-构造数据抽象/2.11.md","ref":"2.-构造数据抽象/2.11.md","articles":[]},"previous":{"title":"2.9","level":"1.3.9","depth":2,"path":"2.-构造数据抽象/2.9.md","ref":"2.-构造数据抽象/2.9.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.10.md","mtime":"2022-07-06T01:34:05.360Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-06T01:34:47.226Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.68","level":"1.3.68","depth":2,"previous":{"title":"2.67","level":"1.3.67","depth":2,"path":"2.-构造数据抽象/2.67.md","ref":"2.-构造数据抽象/2.67.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.68.md","mtime":"2022-07-06T01:34:05.404Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-06T01:34:47.226Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

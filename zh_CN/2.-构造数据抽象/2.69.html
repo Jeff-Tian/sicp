@@ -62,6 +62,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2.70.html" />
+    
     
     <link rel="prev" href="2.68.html" />
     
@@ -1321,6 +1323,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.70" data-path="2.70.html">
+            
+                <a href="2.70.html">
+            
+                    
+                    2.70
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1557,9 +1572,24 @@
 (encode-symbol &apos;A sample-tree)
 </code></pre>
 <p>&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B; make-leaf-set&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define sorted (make-leaf-set (list (list &apos;A 8) (list &apos;B&apos; 4) (list &apos;C&apos; 2) (list &apos;D 1))))
+<pre><code class="lang-eval-scheme">(define sorted (make-leaf-set (list (list &apos;A 8) (list &apos;B 4) (list &apos;C 2) (list &apos;D 1))))
 
 sorted
+</code></pre>
+<pre><code class="lang-eval-scheme">(define p (list
+        (list &apos;A 2)
+        (list &apos;NA 16)
+        (list &apos;BOOM 1)
+        (list &apos;SHA 3)
+        (list &apos;GET 2)
+        (list &apos;YIP 9)
+        (list &apos;JOB 2)
+        (list &apos;WAH 1)
+    ))
+
+(make-leaf-set 
+    p
+)
 </code></pre>
 <p>&#x679C;&#x7136;&#x80FD;&#x5C06;&#x5BF9;&#x5076;&#x8868;&#x53D8;&#x6210;&#x53F6;&#x7684;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#xFF01;&#x73B0;&#x5728;&#x6765;&#x5199;successive-merge&#xFF1A;</p>
 <pre><code class="lang-eval-scheme">(define (successive-merge sorted-leaf-set)
@@ -1588,6 +1618,8 @@ sorted
 
 (successive-merge sorted)
 </code></pre>
+<pre><code class="lang-eval-scheme">(generate-huffman-tree p)
+</code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -1615,10 +1647,14 @@ sorted
 
             
                 
-                <a href="2.68.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.68">
+                <a href="2.68.html" class="navigation navigation-prev " aria-label="Previous page: 2.68">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2.70.html" class="navigation navigation-next " aria-label="Next page: 2.70">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1627,7 +1663,7 @@ sorted
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.69","level":"1.3.69","depth":2,"previous":{"title":"2.68","level":"1.3.68","depth":2,"path":"2.-构造数据抽象/2.68.md","ref":"2.-构造数据抽象/2.68.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.69.md","mtime":"2022-07-06T11:56:37.301Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-06T11:57:37.018Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.69","level":"1.3.69","depth":2,"next":{"title":"2.70","level":"1.3.70","depth":2,"path":"2.-构造数据抽象/2.70.md","ref":"2.-构造数据抽象/2.70.md","articles":[]},"previous":{"title":"2.68","level":"1.3.68","depth":2,"path":"2.-构造数据抽象/2.68.md","ref":"2.-构造数据抽象/2.68.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.69.md","mtime":"2022-07-17T12:00:46.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-17T12:01:35.935Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

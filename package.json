@@ -16,7 +16,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gitbook install && book sm && gitbook build",
+    "build": "git submodule update --init --recursive&&gitbook install && book sm && gitbook build",
     "build-only": "gitbook build",
     "start": "npm run build && gitbook serve",
     "restart": "gitbook serve"

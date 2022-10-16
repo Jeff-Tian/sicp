@@ -62,6 +62,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2.76.md" />
+    
     
     <link rel="prev" href="2.74.html" />
     
@@ -1399,6 +1401,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.76" data-path="2.76.md">
+            
+                <span>
+            
+                    
+                    2.76
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1452,20 +1467,96 @@
                                 <h1 id="275">2.75</h1>
 <h2 id="&#x7EC3;&#x4E60;-275-&#x8BF7;&#x7528;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7684;&#x98CE;&#x683C;&#x5B9E;&#x73B0;&#x6784;&#x9020;&#x51FD;&#x6570;make-from-mag-ang&#x3002;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x5E94;&#x8BE5;&#x4E0E;&#x4E0A;&#x9762;&#x7ED9;&#x51FA;&#x7684;make-from-real-imag&#x8FC7;&#x7A0B;&#x7C7B;&#x4F3C;&#x3002;">&#x7EC3;&#x4E60; 2.75 &#x8BF7;&#x7528;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7684;&#x98CE;&#x683C;&#x5B9E;&#x73B0;&#x6784;&#x9020;&#x51FD;&#x6570;<code>make-from-mag-ang</code>&#x3002;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x5E94;&#x8BE5;&#x4E0E;&#x4E0A;&#x9762;&#x7ED9;&#x51FA;&#x7684;<code>make-from-real-imag</code>&#x8FC7;&#x7A0B;&#x7C7B;&#x4F3C;&#x3002;</h2>
 <hr>
-<p>(define (make-from-mag-ang mag ang)
+<pre><code class="lang-eval-scheme">(define (make-from-mag-ang mag ang)
     (define (dispatch op)
         (cond
-            ((eq? op &apos;real-part) (<em> mag (cos ang)))
-            ((eq? op &apos;imag-part) (</em> mag (sin ang)))
+            ((eq? op &apos;real-part) (* mag (cos ang)))
+            ((eq? op &apos;imag-part) (* mag (sin ang)))
             ((eq? op &apos;magnitude) mag)
             ((eq? op &apos;angle) ang)
             (else
                 (error &quot;Unknown op -- MAKE-FROM-MAG-ANG&quot; op)
             )
         )
-    )</p>
-<pre><code>dispatch
-</code></pre><p>)</p>
+    )
+
+    dispatch
+)
+</code></pre>
+<p>=======</p>
+<h2 id="&#x542F;&#x53D1;">&#x542F;&#x53D1;</h2>
+<p>&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x7684;&#x4E16;&#x754C;&#x91CC;&#x5446;&#x4E45;&#x4E86;&#xFF0C;&#x4F3C;&#x4E4E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x6784;&#x9020;&#x51FA;&#x4E00;&#x4E2A;&#x201C;&#x575A;&#x56FA;&#x201D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6709;&#x660E;&#x786E;&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x590D;&#x6570;&#x7C7B;&#xFF0C;&#x4E00;&#x5B9A;&#x4F1A;&#x60F3;&#x7740;&#x7528;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x53BB;&#x5B58;&#x50A8;&#x5176;&#x5B9E;&#x90E8;&#xFF0C;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x53BB;&#x5B58;&#x50A8;&#x5176;&#x865A;&#x90E8;&#x3002;&#x5C31;&#x7B97;&#x518D;&#x6DFB;&#x52A0;&#x51E0;&#x4E2A;&#x65B9;&#x5F0F;&#xFF0C;&#x7528;&#x6765;&#x5206;&#x522B;&#x83B7;&#x53D6;&#x6A21;&#x548C;&#x5E45;&#x89D2;&#xFF0C;&#x4E5F;&#x4E00;&#x5B9A;&#x662F;&#x7528; <code>this.x</code> &#x548C; <code>this.y</code> &#x6765;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x5373;&#x5927;&#x81F4;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-eval-js">class ComplexNumber {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+
+    this.mag = this.x * this.x + this.y * this.y;
+    this.ang = Math.atan(y, x);
+  }
+
+  static fromMagAng(mag, ang) {
+    const x = mag * Math.cos(ang);
+    const y = mag * Math.sin(ang);
+
+    const c = new ComplexNumber(x, y);
+    c.mag = mag;
+    c.ang = ang;
+
+    return c;
+  }
+
+  get realPart() {
+    return this.x;
+  }
+
+get imagPart() {
+  return this.y;
+}
+
+get magnitude() {
+  return this.mag;
+}
+
+get angle() {
+  return this.ang;
+}
+}
+
+const c = new ComplexNumber(1, 2);
+console.log(c.realPart);
+console.log(c.imagPart);
+console.log(c.magnitude);
+console.log(c.angle);
+</code></pre>
+<p>&#x7136;&#x800C;&#xFF0C;&#x901A;&#x8FC7;&#x95ED;&#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x5728;&#x5BF9;&#x8C61;&#x91CC;&#x5B58;&#x50A8;&#x5177;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x4ECE;&#x800C;&#x53D8;&#x6210;&#x6240;&#x8C13;&#x7684;&#x201C;&#x667A;&#x80FD;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x201D;&#x3002;&#x867D;&#x7136;&#x6CA1;&#x6709;&#x5728;&#x4E00;&#x4E2A;&#x201C;&#x5BF9;&#x8C61;&#x201D;&#x4E2D;&#x5B58;&#x50A8;&#x5177;&#x4F53;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x7684;&#x6548;&#x679C;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<pre><code class="lang-eval-js">
+const makeComplexNumberFromRealImag = (x, y) =&gt; {
+    const dispatch = (op) =&gt; {
+        switch (op) {
+            case &apos;realPart&apos;:
+                return x;
+            case &apos;imagPart&apos;:
+                return y;
+            case &apos;magnitude&apos;:
+                return x * x + y * y;
+            case &apos;angle&apos;:
+                return Math.atan(y / x);
+            default: 
+                throw new Error(&apos;Unknown op: &apos; + op);
+        }
+    }
+
+    return dispatch;
+};
+
+const n = makeComplexNumberFromRealImag(1, 2);
+console.log(n(&apos;realPart&apos;));
+console.log(n(&apos;imagPart&apos;));
+console.log(n(&apos;magnitude&apos;));
+console.log(n(&apos;angle&apos;));
+</code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -1493,10 +1584,14 @@
 
             
                 
-                <a href="2.74.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.74">
+                <a href="2.74.html" class="navigation navigation-prev " aria-label="Previous page: 2.74">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2.76.md" class="navigation navigation-next " aria-label="Next page: 2.76">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1505,7 +1600,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.75","level":"1.3.75","depth":2,"previous":{"title":"2.74","level":"1.3.74","depth":2,"path":"2.-构造数据抽象/2.74.md","ref":"2.-构造数据抽象/2.74.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.75.md","mtime":"2022-10-16T06:45:03.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-16T06:45:53.122Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.75","level":"1.3.75","depth":2,"next":{"title":"2.76","level":"1.3.76","depth":2,"path":"2.-构造数据抽象/2.76.md","ref":"2.-构造数据抽象/2.76.md","articles":[]},"previous":{"title":"2.74","level":"1.3.74","depth":2,"path":"2.-构造数据抽象/2.74.md","ref":"2.-构造数据抽象/2.74.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.75.md","mtime":"2022-10-16T07:23:19.472Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-16T07:23:58.312Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

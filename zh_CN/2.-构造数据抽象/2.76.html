@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.23 · SICP | 计算机程序的构造和解释</title>
+        <title>2.76 · SICP | 计算机程序的构造和解释</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2.24.html" />
     
-    
-    <link rel="prev" href="2.22.html" />
+    <link rel="prev" href="2.75.html" />
     
 
     </head>
@@ -712,7 +710,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.23" data-path="2.23.html">
+        <li class="chapter " data-level="1.3.23" data-path="2.23.html">
             
                 <a href="2.23.html">
             
@@ -1401,7 +1399,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.76" data-path="2.76.html">
+        <li class="chapter active" data-level="1.3.76" data-path="2.76.html">
             
                 <a href="2.76.html">
             
@@ -1449,7 +1447,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.23</a>
+        <a href=".." >2.76</a>
     </h1>
 </div>
 
@@ -1464,56 +1462,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="223">2.23</h1>
-<h2 id="&#x7EC3;&#x4E60;-223-&#x8FC7;&#x7A0B;for-each&#x4E0E;map&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4EE5;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#x548C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8868;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x8868;&#xFF0C;&#x53EA;&#x662F;&#x5C06;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x8FC7;&#x7A0B;&#x5E94;&#x7528;&#x4E8E;&#x5143;&#x7D20;&#x5F97;&#x5230;&#x7684;&#x503C;&#x90FD;&#x4E22;&#x6389;&#x4E0D;&#x7528;&#x3002;for-each&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x90A3;&#x4E9B;&#x6267;&#x884C;&#x4E86;&#x67D0;&#x4E9B;&#x52A8;&#x4F5C;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5982;&#x6253;&#x5370;&#x7B49;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#xFF1A;">&#x7EC3;&#x4E60; 2.23 &#x8FC7;&#x7A0B;for-each&#x4E0E;map&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4EE5;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#x548C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8868;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x8868;&#xFF0C;&#x53EA;&#x662F;&#x5C06;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x8FC7;&#x7A0B;&#x5E94;&#x7528;&#x4E8E;&#x5143;&#x7D20;&#x5F97;&#x5230;&#x7684;&#x503C;&#x90FD;&#x4E22;&#x6389;&#x4E0D;&#x7528;&#x3002;for-each&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x90A3;&#x4E9B;&#x6267;&#x884C;&#x4E86;&#x67D0;&#x4E9B;&#x52A8;&#x4F5C;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5982;&#x6253;&#x5370;&#x7B49;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#xFF1A;</h2>
-<pre><code>(for-each (lambda (x) (newline) (display x))
-    (list 57 321 88))
-
-57
-321
-88
-</code></pre><p>&#x7531;for-each&#x7684;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#xFF08;&#x4E0A;&#x9762;&#x6CA1;&#x6709;&#x663E;&#x793A;&#xFF09;&#x53EF;&#x4EE5;&#x662F;&#x67D0;&#x79CD;&#x4EFB;&#x610F;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4F8B;&#x5982;&#x903B;&#x8F91;&#x503C;&#x771F;&#x3002;&#x8BF7;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;for-each&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+                                <h1 id="276">2.76</h1>
+<h2 id="&#x7EC3;&#x4E60;-276-&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#x7684;&#x5927;&#x578B;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x4E0D;&#x65AD;&#x6F14;&#x5316;&#xFF0C;&#x5728;&#x6F14;&#x5316;&#x4E2D;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x63D0;&#x51FA;&#x7684;&#x4E09;&#x79CD;&#x7B56;&#x7565;&#x2014;&#x2014;&#x5E26;&#x6709;&#x663E;&#x5F0F;&#x5206;&#x6D3E;&#x7684;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#xFF0C;&#x6570;&#x636E;&#x5BFC;&#x5411;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x4EE5;&#x53CA;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7684;&#x98CE;&#x683C;&#x2014;&#x2014;&#x8BF7;&#x63CF;&#x8FF0;&#x5728;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x65B0;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x6240;&#x5FC5;&#x987B;&#x505A;&#x7684;&#x4FEE;&#x6539;&#x3002;&#x54EA;&#x79CD;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x7CFB;&#x7EDF;&#xFF1F;&#x54EA;&#x79CD;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x64CD;&#x4F5C;&#x7684;&#x7CFB;&#x7EDF;&#xFF1F;">&#x7EC3;&#x4E60; 2.76 &#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#x7684;&#x5927;&#x578B;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x4E0D;&#x65AD;&#x6F14;&#x5316;&#xFF0C;&#x5728;&#x6F14;&#x5316;&#x4E2D;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x63D0;&#x51FA;&#x7684;&#x4E09;&#x79CD;&#x7B56;&#x7565;&#x2014;&#x2014;&#x5E26;&#x6709;&#x663E;&#x5F0F;&#x5206;&#x6D3E;&#x7684;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#xFF0C;&#x6570;&#x636E;&#x5BFC;&#x5411;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x4EE5;&#x53CA;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7684;&#x98CE;&#x683C;&#x2014;&#x2014;&#x8BF7;&#x63CF;&#x8FF0;&#x5728;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x65B0;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x6240;&#x5FC5;&#x987B;&#x505A;&#x7684;&#x4FEE;&#x6539;&#x3002;&#x54EA;&#x79CD;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x7CFB;&#x7EDF;&#xFF1F;&#x54EA;&#x79CD;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x64CD;&#x4F5C;&#x7684;&#x7CFB;&#x7EDF;&#xFF1F;</h2>
 <hr>
-<div id="scheme-1">
-(define (for-each proc lst)
-    (if (null? lst) 
-        #t
-        ((proc (car lst)) (for-each proc (cdr lst)))
-    )
-)
-
-(for-each (lambda (x) (newline) (display x))
-    (list 57 321 88))
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<p><link rel="stylesheet" type="text/css" href="../../coding-js/deps/codemirror/lib/codemirror.css"></p>
-<p><link rel="stylesheet" type="text/css" href="../../coding-js/coding.css"></p>
-<link rel="stylesheet" type="text/css" href="../../coding-js/base.css">
-
-<script src="../../coding-js/deps/codemirror/lib/codemirror.js"></script>
-<script src="../../coding-js/deps/jquery.min.js"></script>
-<script src="../../coding-js/coding.js"> </script>
-
-<script src="../../coding-js/deps/codemirror/mode/scheme/scheme.js"></script>
-
-<script>
-  c = new CodingJS('../../coding-js/');
-</script>
-
-<script>
-      c.prompt("scheme-1");
-</script> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<p>&#x5F53;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5E26;&#x6709;&#x663E;&#x5F0F;&#x5206;&#x6D3E;&#x7684;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6240;&#x6709;&#x7684;&#x9009;&#x62E9;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x9002;&#x914D;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x800C;&#x6570;&#x636E;&#x5BFC;&#x5411;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5DF2;&#x6709;&#x7684;&#x8868;&#x683C;&#x91CC;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#x5373;&#x53EF;&#xFF0C;&#x6539;&#x52A8;&#x5F88;&#x5C11;&#x3002;&#x5BF9;&#x4E8E;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x4EC5;&#x9700;&#x8981;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6539;&#x52A8;&#x5F88;&#x5C11;&#x3002;&#x6216;&#x8005;&#x8BF4;&#xFF0C;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#x65B9;&#x5F0F;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x52A8;&#x5DF2;&#x6709;&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x65B0;&#x589E;&#x7C7B;&#x578B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5F53;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x5E26;&#x6709;&#x663E;&#x5F0F;&#x5206;&#x6D3E;&#x7684;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#x4E2D;&#x517C;&#x5BB9;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6539;&#x52A8;&#x4E0D;&#x591A;&#xFF0C;&#x4F46;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x91CF;&#x5F88;&#x5927;&#x3002;&#x800C;&#x6570;&#x636E;&#x5BFC;&#x5411;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x4E5F;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5DF2;&#x6709;&#x7684;&#x8868;&#x683C;&#x91CC;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x4EE3;&#x7801;&#x91CF;&#x6BD4;&#x663E;&#x5F0F;&#x5206;&#x6D3E;&#x7684;&#x901A;&#x7528;&#x578B;&#x64CD;&#x4F5C;&#x8981;&#x5C11;&#x5F88;&#x591A;&#x3002;&#x800C;&#x6D88;&#x606F;&#x4F20;&#x9012;&#xFF0C;&#x6539;&#x52A8;&#x91CF;&#x4E5F;&#x8F83;&#x5927;&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x53BB;&#x589E;&#x52A0;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x7EFC;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x6570;&#x636E;&#x5BFC;&#x5411;&#x7684;&#x98CE;&#x683C;&#x6700;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x52A0;&#x5165;&#x65B0;&#x64CD;&#x4F5C;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
                             
@@ -1540,14 +1495,10 @@
 
             
                 
-                <a href="2.22.html" class="navigation navigation-prev " aria-label="Previous page: 2.22">
+                <a href="2.75.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.75">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2.24.html" class="navigation navigation-next " aria-label="Next page: 2.24">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1556,7 +1507,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.23","level":"1.3.23","depth":2,"next":{"title":"2.24","level":"1.3.24","depth":2,"path":"2.-构造数据抽象/2.24.md","ref":"2.-构造数据抽象/2.24.md","articles":[]},"previous":{"title":"2.22","level":"1.3.22","depth":2,"path":"2.-构造数据抽象/2.22.md","ref":"2.-构造数据抽象/2.22.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.23.md","mtime":"2022-10-16T09:52:55.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-16T09:53:42.793Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.76","level":"1.3.76","depth":2,"previous":{"title":"2.75","level":"1.3.75","depth":2,"path":"2.-构造数据抽象/2.75.md","ref":"2.-构造数据抽象/2.75.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.76.md","mtime":"2022-10-16T09:52:55.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-16T09:53:42.793Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

@@ -1496,7 +1496,33 @@
 )
 </code></pre>
 <p>&#x7136;&#x540E;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <code>apply-generic</code> &#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define (apply-generic op . args)
+<pre><code class="lang-eval-scheme">(define (attach-tag type-tag contents)
+    (cons type-tag contents)
+)
+
+(define (type-tag datum)
+    (if (pair? datum)
+        (car datum)
+        (error &quot;Bad tagged datum -- TYPE-TAG&quot; datum)
+    )
+)
+
+(define (contents datum)
+    (if (pair? datum)
+        (cdr datum)
+        (error &quot;Bad tagged datum -- CONTENTS&quot; datum)
+    )
+)
+
+(define (rectangular? z)
+    (eq? (type-tag z) &apos;rectangular)
+)
+
+(define (polar? z)
+    (eq? (type-tag z) &apos;polar)
+)
+
+(define (apply-generic op . args)
     (let ((type-tags (map type-tags args)))
         (let ((proc (get op type-tags)))
             (if proc
@@ -1535,7 +1561,9 @@ exports;&quot;))
 )
 </code></pre>
 <p>&#x6709;&#x4E86; <code>get</code> &#x548C; <code>put</code> &#x7684;&#x652F;&#x6301;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5199; <code>install-package</code> &#x51FD;&#x6570;&#x4E86;&#xFF1A;</p>
-<pre><code class="lang-eval-scheme">(define (install-rectangular-package)
+<pre><code class="lang-eval-scheme">(define (square x) (* x x))
+
+(define (install-rectangular-package)
     ;; internal procedures
     (define (real-part z) (car z))
     (define (imag-part z) (cdr z))
@@ -1562,10 +1590,6 @@ exports;&quot;))
     )
 
     ;; interface to the rest of the system
-    (define (attach-tag type-tag contents)
-        (if (number? contents)
-            contents
-            (cons type-tag contents)))
     (define (tag x) (attach-tag &apos;rectangular x))
     (put &apos;real-part &apos;rectangular real-part)
     (put &apos;imag-part &apos;rectangular imag-part)
@@ -1645,7 +1669,7 @@ z
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.77","level":"1.3.77","depth":2,"previous":{"title":"2.76","level":"1.3.76","depth":2,"path":"2.-构造数据抽象/2.76.md","ref":"2.-构造数据抽象/2.76.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.77.md","mtime":"2022-11-26T06:26:48.510Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-26T06:27:40.998Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.77","level":"1.3.77","depth":2,"previous":{"title":"2.76","level":"1.3.76","depth":2,"path":"2.-构造数据抽象/2.76.md","ref":"2.-构造数据抽象/2.76.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.77.md","mtime":"2022-12-03T11:02:29.256Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-03T11:03:11.701Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>

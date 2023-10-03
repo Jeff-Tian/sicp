@@ -1583,16 +1583,68 @@
 <pre><code class="lang-eval-scheme">(equ? 1 2)
 </code></pre>
 <p>&#x4E5F;&#x652F;&#x6301;&#x4E86;&#x3002;&#x518D;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;&#x6709;&#x7406;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-eval-scheme">(define (install-rational-package)
+;; internal procedures
+    (define (number x) (car x))
+    (define (denom x) (cdr x))
+    (define (make-rat n d)
+        (let ((g (gcd n d)))
+            (cons (/ n g) (/ d g))
+        )
+    )
+    (define (add-rat x y)
+        (make-rat (+ (* (numer x) (denom y))
+                    (* (numer y) (denom x))
+                  )
+                  (* (denom x) (denom y)))
+    )
+    (define (sub-rat x y)
+        (make-rat (- (* (numer x) (denom y))
+                    (* (numer y) (denom x))
+                  )
+                  (* (denom x) (denom y))
+        )
+    )
+    (define (mul-rat x y)
+        (make-rat (* (numer x) (numer y)
+                (* (denom x) (denom y))))
+    )
+    (define (div-rat x y)
+        (make-rat (* (numer x) (denom y))
+                (* (denom x) (numer y))
+        )
+    )
+
+;; interface to rest of the system
+    (define (tag x) (attach-tag &apos;rational x))
+    (put &apos;equ? &apos;(rational rational) (lambda (x y) (tag (= (numer x) (numer y)))))
+    (put &apos;make &apos;rational (lambda (n d) (tag (make-rat n d))))
+    (put &apos;numer &apos;rational (lambda (x) (numer (contents x))))
+    (put &apos;denom &apos;rational (lambda (x) (denom (contents x))))
+    (put &apos;add &apos;(rational rational) (lambda (x y) (tag (add-rat x y))))
+    (put &apos;sub &apos;(rational rational) (lambda (x y) (tag (sub-rat x y))))
+    (put &apos;mul &apos;(rational rational) (lambda (x y) (tag (mul-rat x y))))
+    (put &apos;div &apos;(rational rational) (lambda (x y) (tag (div-rat x y))))
+
+    &apos;done
+)
+
+(define (make-rational n d)
+    ((get &apos;make &apos;rational) n d)
+)
+
+(install-rational-package)
+
+(equ? (make-rational 1 2) (make-rational 1 2))
+</code></pre>
+<p>&#x518D;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x5BF9;&#x6709;&#x7406;&#x6570;&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x518D;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;&#x590D;&#x6570;&#xFF1A;</p>
 <pre><code class="lang-eval-scheme">```
 
-&#x518D;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x5BF9;&#x6709;&#x7406;&#x6570;&#x7684;&#x652F;&#x6301;&#x3002;
-
-&#x63A5;&#x7740;&#xFF0C;&#x518D;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;&#x590D;&#x6570;&#xFF1A;
+&#x6700;&#x540E;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x5BF9;&#x590D;&#x6570;&#x7684;&#x652F;&#x6301;&#xFF1A;
 
 ```eval-scheme
 </code></pre>
-<p>&#x6700;&#x540E;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x5BF9;&#x590D;&#x6570;&#x7684;&#x652F;&#x6301;&#xFF1A;</p>
-<p><code>eval-scheme</code></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -1632,7 +1684,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.79","level":"1.3.79","depth":2,"previous":{"title":"2.78","level":"1.3.78","depth":2,"path":"2.-构造数据抽象/2.78.md","ref":"2.-构造数据抽象/2.78.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.79.md","mtime":"2022-12-20T08:19:48.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-20T08:20:45.903Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"2.79","level":"1.3.79","depth":2,"previous":{"title":"2.78","level":"1.3.78","depth":2,"path":"2.-构造数据抽象/2.78.md","ref":"2.-构造数据抽象/2.78.md","articles":[]},"dir":"ltr"},"config":{"plugins":["klipse","github","eason-parser","-theme-default","theme-jeff-tian","katex2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex2":{},"github":{"url":"https://github.com/jeff-tian/sicp"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-jeff-tian":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"eason-parser":{"myConfigKey":"it's the default value"},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/jeff-tian/sicp/edit/master","label":"Edit Page"},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"SICP | 计算机程序的构造和解释","language":"zh_CN","gitbook":"*"},"file":{"path":"2.-构造数据抽象/2.79.md","mtime":"2023-10-03T14:17:30.309Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-03T14:18:30.880Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>
